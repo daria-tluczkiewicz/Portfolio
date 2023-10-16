@@ -35,10 +35,29 @@ body {
     font-size: 16px;
     border: none;
     border-radius: 6px;
+    transition: 0.1s ease-out all;
+
+    &:hover {
+        transition: 0.1s ease-out all;
+        background-color: #8c33ec;
+    }
 
     img {
         height: 13px;
         width: auto;
+    }
+    
+}
+.button.about{
+    gap: 10px;
+    
+    
+    &:hover {
+
+        img {
+            transition: 0.1s ease-out all;
+            transform: translateX(10px);
+        }
     }
 }
 .section-image {
@@ -75,7 +94,6 @@ nav {
     align-items: center;
     background-color: white;
     white-space: nowrap;
-    box-shadow:  0 0 10px #00000020;
 
 
     .name {
@@ -114,7 +132,7 @@ section.skills {
     background-color: #212121;
 
     h2{
-        color: white
+        color: white;
     }
 
     .skills-container {
@@ -132,6 +150,7 @@ section.skills {
         }
     }
 }
+
 
 section.experience {
     background-color: #323232;
@@ -225,64 +244,6 @@ section.footer {
     .overlay {
         transition: 0.1s ease-out
     }
-    body.nav-open {
-        .overlay {
-            position: fixed;
-            background-color: #f8f9fb;
-            backdrop-filter: blur(4px);
-            height: 100vh;
-            width: 100vw;
-            opacity: 0.9;
-            transition: 0.2s ease-out
-        }
-        .navigation {
-            box-shadow:  0 0 50px #00000012;
-            transform: none;
-            visibility: visible;
-            position: fixed;
-            right: 5vw;
-            top: 97px;
-            padding: 20px 30px;
-            width: 300px;
-            flex-direction: column;
-            background-color: white;
-            border-radius: 6px;
-            opacity: 1;
-            gap: 5px;
-            transition: 0.2s ease-out transform .2s .4s ease display;
-            
-            .nav-item {
-                border-radius: 6px;
-                width: 100%;
-                padding: 10px;
-                opacity: 1;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .nav-item:hover{
-                .dot {
-                    background-color: #212121; 
-                }
-            }
-            .nav-item:last-child {
-                width: 300px;
-                padding: 0;
-                position: fixed;
-                top: 323px;
-                right: 5vw;
-                
-                .button {
-                    width: 100%;
-                    height: 100%;
-                    align-items: center;
-                    justify-content: flex-end;
-                    flex-direction: row-reverse;
-                }
-            }
-        }
-    }
     .burger {
         position: fixed;
         right: 5vw;
@@ -293,11 +254,11 @@ section.footer {
         height: 30px;
 
         .line, .line::after, .line::before {
+            transition: .5s transform, .2s .5s top, .5s .7s background-color;
             border-radius: 2px;
             height: 3px;
             width: 100%;
             background-color: #212121;
-
         }
         .line::after, .line::before {
             content: '';
@@ -310,4 +271,113 @@ section.footer {
             top: 10px;
         }
     }
+    body.nav-open {
+        overflow: hidden;
+
+        .overlay {
+            position: fixed;
+            background-color: #f8f9fb;
+            backdrop-filter: blur(4px);
+            height: 100vh;
+            width: 100vw;
+            opacity: 0.9;
+            transition: 0.2s ease-out
+        }
+
+        .burger {
+            .line::after, .line::before {
+                top: 0;
+                transition: .5s .3s transform, .2s .1s top, .1s  background-color;
+            }
+    
+            .line {
+                background-color: transparent;
+                height: 0px;
+                padding-top:3px;
+                transition: .5s .3s transform, .2s .1s top, .1s  background-color;
+            }
+    
+            .line::before {
+                transform: rotate(45deg); 
+            }
+    
+            .line::after {
+                transform: rotate(-45deg);
+            }
+        }
+        nav {
+            background-color: transparent;
+        }
+        .navigation {
+            box-shadow:  0 0 50px #00000012;
+            transform: none;
+            visibility: visible;
+            position: fixed;
+            right: 5vw;
+            top: 97px;
+            width: 300px;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 6px;
+            opacity: 1;
+            gap: 0;
+            transition: 0.2s ease-out transform .2s .4s ease display;
+            
+            .nav-item {
+                border-radius: 6px;
+                width: 100%;
+                padding: 0;
+                opacity: 1;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    padding:20px 30px;
+                }
+
+                &:hover{
+                    .dot {
+                        background-color: #8c33ec;
+                        margin-right: 30px;
+                    }
+                }
+            }
+            .nav-item:last-child {
+                width: 300px;
+                padding: 0;
+                position: fixed;
+                top: 341px;
+                right: 5vw;
+
+                a {
+                    padding:0;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                .button {
+                    width: 100%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: flex-end;
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+    
+}
+
+.cursor {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background-color: #52d766;
+    transition: 0.1s ease-out;
 }
