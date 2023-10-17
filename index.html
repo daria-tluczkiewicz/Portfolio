@@ -6,31 +6,35 @@
     <link rel="stylesheet" href="reset.scss" />
     <link rel="stylesheet" href="style.scss" />
     <link rel="stylesheet" href="animations.scss" />
+    <link rel="stylesheet" href="gradient-bg.scss">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
   </head>
   <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="what">
     <div class="overlay"></div>
     <nav>
-      <div class="name">Daria Tłuczkiewicz </div>
+      <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div>
       <div class="burger">
         <div class="line"></div>
       </div>
       <ul class="navigation">
-        <li class="nav-item"><a href="#skills">Skills</a><div class="dot"></div></li>
-        <li class="nav-item"><a href="#experience">Experience</a><div class="dot"></div></li>
-        <li class="nav-item"><a href="#projects">Portfolio</a><div class="dot"></div></li>
-        <li class="nav-item"><a href="#contact">Contact</a><div class="dot"></div></li>
-        <li class="nav-item"><a href="" download><button class="button">Download CV <img src="img/download-cloud.png" alt="CV"></button></a></li>
+        <li class="nav-item"><a href="#skills">Skills</a></li>
+        <li class="nav-item"><a href="#experience">Experience</a></li>
+        <li class="nav-item"><a href="#projects">Portfolio</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+        <li class="nav-item"><button class="button"><a href="" download>Download CV <img src="img/download-cloud.png" alt="CV"></a></button></li>
       </ul>
     </nav>
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="container">
         <img class="section-image" src="img/code.png" alt="code">
-        <h1>Hello, I'm Daria,<br/>I'm Frontend Developer
-        </h1>
+        <h1>Hello, I'm Daria,<br/>I'm Frontend Developer</h1>
         <p class="about-me max-readable">I'm a passionate frontend developer with expertise in creating responsive and interactive interfaces. Proficient in HTML, CSS, JavaScript, React, Redux and Git for crafting exceptional frontend experiences.</p>
-        <button class="button about">About me <img src="img/arrow-down.png" alt=""></button>
+        <!-- może ustaw img jako background-image 
+          to nie będzie sie dziwnie ten hover kursora zachowywał -->
+        <button class="button about"><a href="#skills">About me <img src="img/arrow-down.png" alt=""></a></button>
       </div>
     </section>
     <section class="skills" id="skills">
@@ -107,7 +111,30 @@
         </ul>
       </div>
     </section>
+
+
+
+    <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
     
+  </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

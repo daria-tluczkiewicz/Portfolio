@@ -49,7 +49,7 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, {
-    threshold: 0.8, // Adjust the threshold as needed
+    threshold: 0.6, // Adjust the threshold as needed
 });
 
 observer.observe(hero);
@@ -57,3 +57,45 @@ observer.observe(skills);
 observer.observe(experience);
 observer.observe(projects);
 observer.observe(footer);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+    if(!isTouchDevice){
+        document.addEventListener('mousemove', handleMouseMove)
+    } else {
+        cursor.style.display = 'none'
+    }
+})
+
+const cursor = document.getElementById('cursor')
+
+function handleMouseMove() {
+    if (e.target.tagName === 'A'||
+    e.target.tagName === 'BUTTON' ||
+    e.target.parentNode === 'BUTTON'){
+        cursor.classList.add('big')
+    } else {
+        cursor.classList.remove('big')
+    }
+    const height = cursor.offsetHeight
+    const width = cursor.offsetWidth
+
+    setTimeout(() => {
+        cursor.style.transform = `translate(${e.clientX - width/2}px, ${e.clientY - height/2}px)`
+    }, 20)
+}
+
+
+window.addEventListener('scroll', handleScroll)
+
+function handleScroll() {
+    const scrollY = window.scrollY;
+    const threshold = 100;
+    if (scrollY >+ threshold) {
+      document.body.classList.add('scrolled');
+    } else {
+      document.body.classList.remove('scrolled');
+    }
+  }
