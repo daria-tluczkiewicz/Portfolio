@@ -8,12 +8,16 @@ function toggleMobileMenu () {
 }
 
 const navItems = document.querySelectorAll('.nav-item');
+const nameButton = document.querySelector('.name a');
+
+nameButton.addEventListener('click', closeNavigation)
 
 navItems.forEach(item => {
-    item.addEventListener('click', ()=> {
-        body.classList.remove('nav-open')
-    })
+    item.addEventListener('click', closeNavigation)
 })
+function closeNavigation() {
+    body.classList.remove('nav-open')
+}
 
 // Function to disable body scrolling
 function disableBodyScroll(event) {
@@ -23,10 +27,7 @@ function disableBodyScroll(event) {
 
 // Function to enable body scrolling
 function enableBodyScroll() {
-	body.removeEventListener('touchmove', preventScroll, { passive: false });
-		console.log('enabled');
-
-}
+	body.removeEventListener('touchmove', preventScroll, { passive: false })}
 
 // Function to prevent default touchmove behavior
 function preventScroll(event) {
@@ -39,6 +40,7 @@ const skills = document.querySelector('.skills');
 const experience = document.querySelector('.experience');
 const projects = document.querySelector('.projects');
 const footer = document.querySelector('.footer');
+const typingText = document.querySelector('.typing-text');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -57,6 +59,7 @@ observer.observe(skills);
 observer.observe(experience);
 observer.observe(projects);
 observer.observe(footer);
+observer.observe(typingText);
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if(!isTouchDevice){
         document.addEventListener('mousemove', handleMouseMove)
+        document.addEventListener('mouseleave', handleMouseLeave)
     } else {
         cursor.style.display = 'none'
     }
@@ -71,10 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const cursor = document.getElementById('cursor')
 
-function handleMouseMove() {
+function handleMouseMove(e) {
+    cursor.style.visibility = 'visible'
     if (e.target.tagName === 'A'||
     e.target.tagName === 'BUTTON' ||
-    e.target.parentNode === 'BUTTON'){
+    e.target.parentNode === 'BUTTON' ||
+    e.target.parentNode === 'A'){
         cursor.classList.add('big')
     } else {
         cursor.classList.remove('big')
@@ -85,6 +91,10 @@ function handleMouseMove() {
     setTimeout(() => {
         cursor.style.transform = `translate(${e.clientX - width/2}px, ${e.clientY - height/2}px)`
     }, 20)
+}
+function handleMouseLeave () {
+
+    cursor.style.visibility = 'hidden'
 }
 
 

@@ -1,10 +1,9 @@
-// vite.config.js
-
 export default {
+  base: '',
   build: {
-    outDir: 'public', // Specify the output directory for the build
+    outDir: 'public', 
   },
   server: {
-    port: 3000, // Specify the port to use for the development server
+    port: 3000, 
   },
 }

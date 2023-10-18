@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="css/reset.scss" />
-    <link rel="stylesheet" href="css/style.scss" />
-    <link rel="stylesheet" href="css/animations.scss" />
-    <link rel="stylesheet" href="css/gradient-bg.scss">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <div class="cursor" id="cursor"></div>
-    <div class="what">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#212121"/>
+  <link rel="stylesheet" href="css/reset.scss" />
+  <link rel="stylesheet" href="css/style.scss" />
+  <link rel="stylesheet" href="css/animations.scss" />
+  <link rel="stylesheet" href="css/gradient-bg.scss">
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="what">
     <div class="overlay"></div>
     <nav>
       <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div>
@@ -24,14 +26,19 @@
         <li class="nav-item"><a href="#experience">Experience</a></li>
         <li class="nav-item"><a href="#projects">Portfolio</a></li>
         <li class="nav-item"><a href="#contact">Contact</a></li>
-        <li class="nav-item"><button class="button"><a href="" download>Download CV <img src="img/download-cloud.png" alt="CV"></a></button></li>
+        <li class="nav-item"><button class="button"><a href="" download>Download CV <img src="img/download-cloud.png"
+                alt="CV"></a></button></li>
       </ul>
     </nav>
     <section class="hero" id="hero">
       <div class="container">
-        <img class="section-image" src="img/code.png" alt="code">
-        <h1>Hello, I'm Daria,<br/>I'm Frontend Developer</h1>
-        <p class="about-me max-readable">I'm a passionate frontend developer with expertise in creating responsive and interactive interfaces. Proficient in HTML, CSS, JavaScript, React, Redux and Git for crafting exceptional frontend experiences.</p>
+        <img class="section-image" src="img/code.png" alt="code" height='32px' width="auto">
+        <h1>
+          <div class="typing-text">Hello, I'm Daria,</div>I'm Frontend Developer
+        </h1>
+        <p class="about-me max-readable">I'm a passionate frontend developer with expertise in creating responsive and
+          interactive interfaces. Proficient in HTML, CSS, JavaScript, React, Redux and Git for crafting exceptional
+          frontend experiences.</p>
         <!-- może ustaw img jako background-image 
           to nie będzie sie dziwnie ten hover kursora zachowywał -->
         <button class="button about"><a href="#skills">About me <img src="img/arrow-down.png" alt=""></a></button>
@@ -39,15 +46,16 @@
     </section>
     <section class="skills" id="skills">
       <div class="container">
-        <img class="section-image" src="img/stack.png" alt="stack">
-        <h2>Empowered by Self-Directed <br/>Learning and Expert Guidance</h2>
+        <img class="section-image" src="img/stack.png" alt="stack" height='32px' width="auto">
+        <h2>Empowered by Self-Directed <br />Learning and Expert Guidance</h2>
         <ul class="skills-container">
           <li class="skill">HTML</li>
-          <li class="skill">CSS / SASS</li>
+          <li class="skill">CSS / SCSS</li>
           <li class="skill">JavaScript</li>
-          <li class="skill">React</li>
+          <li class="skill">ReactJS</li>
           <li class="skill">Redux Toolkit</li>
           <li class="skill">Web Components</li>
+          <li class="skill">Wordpress</li>
           <li class="skill">GIT</li>
           <li class="skill">Webpack / Vite</li>
           <li class="skill">Photoshop</li>
@@ -57,58 +65,79 @@
     </section>
     <section class="experience" id="experience">
       <div class="container">
-        <img class="section-image" src="img/briefcase.png" alt="">
+        <img class="section-image" src="img/briefcase.png" alt="briefcase" height='32px' width="auto">
         <h2>Experience</h2>
         <div class="position">
           <div class="position-header">
-            <h3>B2B Web Developer at Code Lovers</h3><p>January - October 2023</p>
+            <h3>B2B Web Developer at Code Lovers</h3>
+            <p>January - October 2023</p>
           </div>
-          <p class="position-responsibilities max-readable">Expertly translated designs into code (HTML, CSS, JavaScript), resolved interface issues across diverse projects, and executed seamless server migrations.</p>
+          <p class="position-responsibilities max-readable">Expertly translated designs into code (HTML, CSS,
+            JavaScript), resolved interface issues across diverse projects, and executed seamless server migrations.</p>
         </div>
         <div class="separator"></div>
         <div class="position">
           <div class="position-header">
-            <h3>Self-Directed Learning and Personal Project </h3><p>Since August 2021</p>
+            <h3>Self-Directed Learning and Personal Project </h3>
+            <p>Since August 2021</p>
           </div>
-          <p class="position-responsibilities max-readable">I've dedicated significant time to self-directed learning and personal projects. Notably, I'm developing an <a href="">app for learning German vocabulary</a>.</p>
+          <p class="position-responsibilities max-readable">I've dedicated significant time to self-directed learning
+            and personal projects. Notably, I'm developing an <a href="">app for learning German vocabulary</a>.</p>
         </div>
       </div>
     </section>
     <section class="projects" id="projects">
       <div class="container">
-        <img class="section-image" src="img/coffee.png" alt="">
-        <h2>Exploring Diverse Projects: <br/> Showcasing Frontend Expertise</h2>
+        <img class="section-image" src="img/coffee.png" alt="coffee" height='32px' width="auto">
+        <h2>Exploring Diverse Projects: <br /> Showcasing Frontend Expertise</h2>
         <div class="project">
           <h3>LangBe - German vocabulary learning app</h3>
-          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a frequency list with card repeating system similar to ANKI flashcards.</p>
+          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
+            frequency list with card repeating system similar to ANKI flashcards.</p>
           <div class="sources">
-            <a href=""><img src="img/github.png" alt="github">Github</a>
-            <a href=""><img src="img/external-link.png" alt="website">View website</a>
+            <a href="" target="_blank">
+              <img width='14px' height='14px' src="img/github.png" alt="github">
+              Github
+            </a>
+            <a href="" target="_blank">
+              <img width='14px' height='14px' src="img/external-link.png" alt="website">
+              View website
+            </a>
           </div>
         </div>
         <div class="separator"></div>
         <div class="project">
           <h3>Code Lovers - Creative agency website</h3>
           <!-- TODO: Zmienić treść -->
-          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a frequency list with card repeating system similar to ANKI flashcards.</p>
+          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
+            frequency list with card repeating system similar to ANKI flashcards.</p>
           <!-- TODO: Uzupełnić linki -->
           <div class="sources">
-            <a href=""><img src="img/github.png" alt="github">Github</a>
-            <a href="https://codelovers.pl"><img src="img/external-link.png" alt="website">View website</a>
+            <a href="" target="_blank">
+              <img width='14px' height='14px' src="img/github.png" alt="github">
+              Github
+            </a>
+            <a width='14px' height='14px' href="https://codelovers.pl" target="_blank">
+              <img src="img/external-link.png" alt="website">
+              View website
+            </a>
           </div>
         </div>
-        <div class="separator"></div>
+        <!-- <div class="separator"></div> -->
       </div>
     </section>
     <section class="footer" id="contact">
       <div class="container">
-        <img class="section-image" src="img/send.png" alt="">
+        <img class="section-image" src="img/send.png" alt="" height='32px' width="auto">
         <h2>Let's get in touch</h2>
         <p>I'm Currently Seeking Frontend Developer Position</p>
         <ul class="contact">
-          <li class="nav-item"><a href="tel:+48514495696"><img src="img/phone.png" alt="phone"> +48 514 495 696</a></li>
-          <li class="nav-item"><a href="mailto:daria.tluczkiewicz@mail.com"><img src="img/mail.png" alt="e-mail">daria.tluczkiewicz@mail.com</a></li>
+          <li><a href="tel:+48514495696"><img src="img/phone.png" alt="phone"> +48 514 495 696</a></li>
+          <li><a href="mailto:daria.tluczkiewicz@mail.com"><img src="img/mail.png"
+                alt="e-mail">daria.tluczkiewicz@mail.com</a></li>
         </ul>
+        <button class="button outline"><a href="" download>Download CV <img src="img/download-cloud.png"
+              alt="CV"></a></button>
       </div>
     </section>
 
@@ -130,11 +159,11 @@
         <div class="g3"></div>
         <div class="g4"></div>
         <div class="g5"></div>
-        <div class="interactive"></div>
       </div>
     </div>
-    
+
   </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

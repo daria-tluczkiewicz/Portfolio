@@ -1,5 +1,13 @@
-h1, h2, h3, p, li, a, div {
+@import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+
+h3, p, li, a, div {
     font-family: 'Roboto';
+}
+h1, h2{
+    font-family: 'geologica';
+}
+h3 {
+    font-size: 18px;
 }
 
 a, a:active, a:visited{
@@ -27,6 +35,7 @@ ul {
 body {
     scroll-behavior: smooth;
     position: relative;
+    overflow-x: hidden;
 }
 
 .max-readable {
@@ -69,6 +78,10 @@ body {
         }
     }
 }
+.button.outline {
+    background-color: #212121;
+    border: 1px solid #f8f9fb;
+}
 
 .section-image {
     height: 32px;
@@ -100,7 +113,7 @@ nav, nav ul {
 nav {
     z-index: 5;
     padding: 0 5vw;
-    width: 100vw;
+    width: 100%;
     height: 77px;
     position: fixed;
     justify-content: space-between;
@@ -132,11 +145,8 @@ nav {
 }
 
 body.scrolled nav {
-    background-color: #f8f9fb;
-
-    .name, a {
-        color: black !important;
-    }
+    background-color: rgb(70 66 66 / 70%);
+    backdrop-filter: blur(4px);
 
     .button {
         a {
@@ -203,6 +213,10 @@ section.experience {
             align-items: center;
             justify-content: space-between;
             font-weight: bold;
+
+            p {
+                font-weight: normal;
+            }
         }
     }
     .separator {
@@ -227,10 +241,16 @@ section.projects {
             gap:30px;
 
             a {
+                padding: 10px;
                 display: flex;
                 gap: 10px;
                 text-decoration: none;
+                img {
+                    height: 14px;
+                    width: 14px;
+                }
             }
+            
         }
     }
     .separator {
@@ -314,30 +334,27 @@ section.footer {
         }
     }
 
-    body.scrolled .burger {
-        .line, .line::after, .line::before {
-            background-color: #212121;
-        }
-    }
-
     body.nav-open {
         overflow: hidden;
 
         .overlay {
             z-index: 2;
             position: fixed;
-            background-color: #f8f9fb;
+            background-color: rgb(70 66 66 / 70%);
             backdrop-filter: blur(4px);
             height: 100vh;
             width: 100vw;
             opacity: 0.9;
             transition: 0.2s ease-out transform;
         }
+        .name a {
+            color: white !important;
+        }
 
         .burger {
-            .line, .line::before, .line::after {
-                background-color: #212121;
-            }
+            // .line, .line::before, .line::after {
+            //     background-color: #212121;
+            // }
             .line::after, .line::before {
                 top: 0;
                 transition: .5s .3s transform, .2s .1s top, .1s  background-color;
@@ -374,6 +391,11 @@ section.footer {
             border-radius: 6px;
             opacity: 1;
             gap: 0;
+
+            .name a {
+                background-color: #212121;
+                z-index: 10;
+            }
             
             .nav-item {
                 border-radius: 6px;
@@ -408,13 +430,12 @@ section.footer {
                 }
             }
             .nav-item:last-child {
-                width: 300px;
+                width: 300px !important;
                 padding: 0;
                 position: fixed;
                 top: 341px;
                 right: 5vw;
 
-               
                 .button {
                     
                     a {
@@ -424,17 +445,21 @@ section.footer {
                 }
             }
         }
+       
     }
-    
+    .footer .contact a {
+        padding: 10px 0;
+    }
 }  
 
 .what {
     mix-blend-mode: difference;
 }
 .cursor {
-    height: 30px;
-    width: 30px;
-    border-radius: 15px;
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -449,4 +474,12 @@ section.footer {
         border-radius: 25px;
         transition: .5s cubic-bezier(0, 0.74, 0, 0.95);
     }
+}
+
+@media (max-width: 570px) {
+    section.experience .position .position-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    } 
 }
