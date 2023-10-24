@@ -14,7 +14,7 @@
 
 <body>
   <div class="cursor" id="cursor"></div>
-  <div class="what">
+  <div class="blend-mode-wrapper">
     <div class="overlay"></div>
     <nav>
       <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div>
@@ -26,11 +26,29 @@
         <li class="nav-item"><a href="#experience">Experience</a></li>
         <li class="nav-item"><a href="#projects">Portfolio</a></li>
         <li class="nav-item"><a href="#contact">Contact</a></li>
-        <li class="nav-item"><button class="button"><a href="" download>Download CV <img src="img/download-cloud.png"
+        <li class="nav-item"><button class="button"><a href="files/cv.pdf" download>Download CV <img src="img/download-cloud.png"
                 alt="CV"></a></button></li>
       </ul>
     </nav>
     <section class="hero" id="hero">
+      <div class="gradient-bg" id="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+        </div>
+      </div>    
       <div class="container">
         <img class="section-image" src="img/code.png" alt="code" height='32px' width="auto">
         <h1>
@@ -82,7 +100,7 @@
             <p>Since August 2021</p>
           </div>
           <p class="position-responsibilities max-readable">I've dedicated significant time to self-directed learning
-            and personal projects. Notably, I'm developing an <a href="">app for learning German vocabulary</a>.</p>
+            and personal projects. Notably, I'm developing an app for learning German vocabulary.</p>
         </div>
       </div>
     </section>
@@ -92,10 +110,9 @@
         <h2>Exploring Diverse Projects: <br /> Showcasing Frontend Expertise</h2>
         <div class="project">
           <div class="project-header">
-            <h3>LangBe - German vocabulary learning app</h3>
-            <a href="" target="_blank">
+            <a href="https://langbe.online/" target="_blank">
+              <h3>LangBe - German vocabulary learning app</h3>
               <img width='14px' height='14px' src="img/external-link.png" alt="website">
-              View website
             </a>
           </div>
           <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
@@ -110,15 +127,13 @@
         <div class="separator"></div>
         <div class="project">
           <div class="project-header">
-            <h3>Code Lovers - Creative agency website</h3>  
             <a width='14px' height='14px' href="https://codelovers.pl" target="_blank">
+              <h3>Code Lovers - Creative agency website</h3>  
               <img src="img/external-link.png" alt="website">
-              View website
             </a>
           </div>
           <!-- TODO: Zmienić treść -->
-          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
-            frequency list with card repeating system similar to ANKI flashcards.</p>
+          <p class="max-readable">Creative agency website built on Wordpress</p>
             <ul class="stack">
               <li class="outline">Wordpress</li>
               <li class="outline">Javascript</li>
@@ -134,35 +149,13 @@
         <p>I'm Currently Seeking Frontend Developer Position</p>
         <ul class="contact">
           <li><a href="tel:+48514495696"><img src="img/phone.png" alt="phone"> +48 514 495 696</a></li>
-          <li><a href="mailto:daria.tluczkiewicz@mail.com"><img src="img/mail.png"
-                alt="e-mail">daria.tluczkiewicz@mail.com</a></li>
+          <li><a href="mailto:daria230t@gmail.com"><img src="img/mail.png"
+                alt="e-mail">daria230t@gmail.com</a></li>
         </ul>
-        <button class="button outline"><a href="" download>Download CV <img src="img/download-cloud.png"
+        <button class="button outline"><a href="files/cv.pdf" download>Download CV <img src="img/download-cloud.png"
               alt="CV"></a></button>
       </div>
     </section>
-
-
-
-    <div class="gradient-bg">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </defs>
-      </svg>
-      <div class="gradients-container">
-        <div class="g1"></div>
-        <div class="g2"></div>
-        <div class="g3"></div>
-        <div class="g4"></div>
-        <div class="g5"></div>
-      </div>
-    </div>
-
   </div>
   <script type="module" src="/main.js"></script>
 </body>

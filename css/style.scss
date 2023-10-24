@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Roboto:wght@400;700&display=swap');
+
+*, html {
+    scroll-behavior: smooth !important;
+}
 
 h3, p, li, a, div {
     font-family: 'Roboto';
@@ -33,9 +38,9 @@ ul {
 }
 
 body {
-    scroll-behavior: smooth;
     position: relative;
     overflow-x: hidden;
+    background-color: black;
 }
 
 .max-readable {
@@ -43,6 +48,7 @@ body {
 }
 
 .button {
+    padding: 0;
     background-color: rgb(0, 0, 0);
     border: none;
     border-radius: 6px;
@@ -93,7 +99,7 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 700px;
-    padding: 5vw;
+    padding: calc(5vw + 77px) 5vw;
 }
 
 section .container {
@@ -163,8 +169,11 @@ nav, body.scrolled nav {
 section.hero {
     padding: calc(77px + 5vw) 5vw calc(77px + 5vw) 5vw;
     min-height: 70vh;
+    min-height: 700px;
+    max-height: 100vh;
     width: 100%;
     color: white;
+    position: relative;
 
     .container{
         gap: 24px;
@@ -232,13 +241,18 @@ section.projects {
         flex-direction: column;
         gap: 10px;
 
-        .project-header {
+        .project-header a {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 20px;
        
             h3 {
                 font-weight: bold;
+            }
+            img{
+                width: 15px;
+                height: 15px;
             }
         }
 
@@ -453,28 +467,33 @@ section.footer {
         padding: 10px 0;
     }
 }  
-
-.what {
-    mix-blend-mode: difference;
-}
 .cursor {
-    visibility: hidden;
-    height: 20px;
-    width: 20px;
-    border-radius: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -5;
-    background-color: white;
-    transition: cubic-bezier(0, 0.74, 0, 0.95);
+    display: none;
+}
+@media (min-width: 1200px) {
+    .blend-mode-wrapper{
+        mix-blend-mode: difference;
+    }
+    .cursor {
+        display: block;
+        visibility: hidden;
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -5;
+        background-color: white;
+        transition: cubic-bezier(0, 0.74, 0, 0.95);
+        
     
-
-    &.big{
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        transition: .5s cubic-bezier(0, 0.74, 0, 0.95);
+        &.big{
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            transition: .5s cubic-bezier(0, 0.74, 0, 0.95);
+        }
     }
 }
 
@@ -484,4 +503,14 @@ section.footer {
         align-items: flex-start;
         gap: 5px;
     } 
+    section, section.hero {
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+    }
+    nav {
+        padding: 0 2.5vw;
+    }
+    .burger {
+        right: 2.5vw;
+    }
 }

@@ -1,9 +1,12 @@
 document.querySelector('.burger').addEventListener('click', toggleMobileMenu)
 const body = document.body
+
 function toggleMobileMenu () {
     body.classList.toggle('nav-open')
     if (body.classList.contains('nav-open')){
         disableBodyScroll()
+    } else {
+        enableBodyScroll()
     }
 }
 
@@ -17,6 +20,7 @@ navItems.forEach(item => {
 })
 function closeNavigation() {
     body.classList.remove('nav-open')
+    enableBodyScroll()
 }
 
 // Function to disable body scrolling
@@ -27,6 +31,7 @@ function disableBodyScroll(event) {
 
 // Function to enable body scrolling
 function enableBodyScroll() {
+    console.log('enabled');
 	body.removeEventListener('touchmove', preventScroll, { passive: false })}
 
 // Function to prevent default touchmove behavior
@@ -35,31 +40,31 @@ function preventScroll(event) {
 }
 
 
-const hero = document.querySelector('.hero');
-const skills = document.querySelector('.skills');
-const experience = document.querySelector('.experience');
-const projects = document.querySelector('.projects');
-const footer = document.querySelector('.footer');
-const typingText = document.querySelector('.typing-text');
+// const hero = document.querySelector('.hero');
+// const skills = document.querySelector('.skills');
+// const experience = document.querySelector('.experience');
+// const projects = document.querySelector('.projects');
+// const footer = document.querySelector('.footer');
+// const typingText = document.querySelector('.typing-text');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        } else {
-            entry.target.classList.remove('animate');
-        }
-    });
-}, {
-    threshold: 0.6, // Adjust the threshold as needed
-});
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('animate');
+//         } else {
+//             entry.target.classList.remove('animate');
+//         }
+//     });
+// }, {
+//     threshold: 0.6, // Adjust the threshold as needed
+// });
 
-observer.observe(hero);
-observer.observe(skills);
-observer.observe(experience);
-observer.observe(projects);
-observer.observe(footer);
-observer.observe(typingText);
+// observer.observe(hero);
+// observer.observe(skills);
+// observer.observe(experience);
+// observer.observe(projects);
+// observer.observe(footer);
+// observer.observe(typingText);
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -109,3 +114,13 @@ function handleScroll() {
       document.body.classList.remove('scrolled');
     }
   }
+
+
+  window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        console.log('stop')
+        document.getElementById('gradient-bg').classList.add('pause-animation')
+    } else {
+          document.getElementById('gradient-bg').classList.remove('pause-animation')
+      }
+  })

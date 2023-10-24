@@ -10,13 +10,13 @@
   
   
   <title>Portfolio</title>
-  <script type="module" crossorigin src="./assets/index-38ecceac.js"></script>
-  <link rel="stylesheet" href="./assets/index-90e4d26f.css">
+  <script type="module" crossorigin src="./assets/index-6cea2476.js"></script>
+  <link rel="stylesheet" href="./assets/index-ef523120.css">
 </head>
 
 <body>
   <div class="cursor" id="cursor"></div>
-  <div class="what">
+  <div class="blend-mode-wrapper">
     <div class="overlay"></div>
     <nav>
       <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div>
@@ -28,11 +28,29 @@
         <li class="nav-item"><a href="#experience">Experience</a></li>
         <li class="nav-item"><a href="#projects">Portfolio</a></li>
         <li class="nav-item"><a href="#contact">Contact</a></li>
-        <li class="nav-item"><button class="button"><a href="" download>Download CV <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAAACXBIWXMAAC4jAAAuIwF4pT92AAABWElEQVQ4jY2TzSutURTGf96OSwyUO5DMmPqYGBlJtwxdJcXQkDr+AykGhooUA1Ju3YmT2R35mirFyEdhYGAkJ2GCfgZny+u99nGeWoO91rOf9bHXRiVjPeqiem8Jj+pfdeAL7idLH+rUNT9wre6rlynfjtpSidhuuLCqNmWItepMKklNObHxQJz9ppUx9UVdiYklYT7bsYwZW1eL6m+1Q61Oiw2FqkYrEEJt9jOu1H6VHNBNCYdUhhtgEGgA2oA8sAX8Qp0LGVojlfxQN9X5SPyneqduJ8B5yNgZqSQHdAG9kfgtMAn0JUABeAWGw8UYLBM7BkiAIrAAjAATKUJdRvxdLAfUZ8T6SoxS34l6of5JzeJBXQ4Le6YeBP8/dS/F61Kf1UJ20EnqXAgPs6meqEfqVvBNB06jehr2tKPcPtWoG/6PqUwBw2q7mb8ZsyX1VX1S82pVjPsGoBe73TnegIAAAAAASUVORK5CYII="
+        <li class="nav-item"><button class="button"><a href="files/cv.pdf" download>Download CV <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAAACXBIWXMAAC4jAAAuIwF4pT92AAABWElEQVQ4jY2TzSutURTGf96OSwyUO5DMmPqYGBlJtwxdJcXQkDr+AykGhooUA1Ju3YmT2R35mirFyEdhYGAkJ2GCfgZny+u99nGeWoO91rOf9bHXRiVjPeqiem8Jj+pfdeAL7idLH+rUNT9wre6rlynfjtpSidhuuLCqNmWItepMKklNObHxQJz9ppUx9UVdiYklYT7bsYwZW1eL6m+1Q61Oiw2FqkYrEEJt9jOu1H6VHNBNCYdUhhtgEGgA2oA8sAX8Qp0LGVojlfxQN9X5SPyneqduJ8B5yNgZqSQHdAG9kfgtMAn0JUABeAWGw8UYLBM7BkiAIrAAjAATKUJdRvxdLAfUZ8T6SoxS34l6of5JzeJBXQ4Le6YeBP8/dS/F61Kf1UJ20EnqXAgPs6meqEfqVvBNB06jehr2tKPcPtWoG/6PqUwBw2q7mb8ZsyX1VX1S82pVjPsGoBe73TnegIAAAAAASUVORK5CYII="
                 alt="CV"></a></button></li>
       </ul>
     </nav>
     <section class="hero" id="hero">
+      <div class="gradient-bg" id="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+        </div>
+      </div>    
       <div class="container">
         <img class="section-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAnCAYAAABqippxAAAACXBIWXMAAC4jAAAuIwF4pT92AAADrElEQVRYhdWYzYsiRxiHn9mJufSl1cWL0iCuMUzEkxlRT7nNeUmOgpKDujJCzMdp/4KwK9GZRSWSFjx4CnPIIXPcQ3TACJsVCQxGCI3NQrOIhDSBMWxysN1Nxo9px/lIftBgW2+99XTVr16qe8vtdrOBdoDHxu9PgZ8vm+jOJfvdBZ4Az4E943pu/Hf3JkDeAj4B+sAD4/6fbQ+Mtv1zbVcKMnvqPCCuiBOBIm9m68pAdoDvjWvHbOJ1+60CEbnEky2QqZlcBLLRWi/RKm8tBNnY/Rfo/G6bA7kHfMf6PrisZv45MsZmy+12P2K6BG/fAMAinQEHW263+69bAviXLltZr1z/TxC73U6j0aBarSKK4ly7KIpUq1UajQZ2u/16QGw2G8VikVAohM/nYzKZzMVMJhN8Ph+hUIhisYjNZrtaEEEQKBQKhMNhVFUlk8mg6/pcnK7rZDIZVFUlHA5TKBQQBOFqQARBoFKpEI1G0TSNdDpNt9tdGt/tdkmn02iaRjQapVKpmIJZCSKKIrIsE4lEUFWVWCxGr9e7MGmv1yMWi6GqKpFIBFmWF3rKFIjD4aBcLhMMBlEUhXg8Tr/fvxBipn6/TzweR1EUgsEg5XIZh8OxHogkSeTzeXZ3dxkOhyQSCQaDgWmImQaDAYlEguFwyO7uLvl8HkmSzIPchhaCKIpCLpej3W7jcrmQZRmPx7N2co/HgyzLuFwu2u02uVwORVHMgwBomkYqlaLT6SBJErVaDa/XaxrC6/VSq9WQJIlOp0MqlULTtKXxK5dmPB6TSCRotVo4nU7q9Tp+v/9CCL/fT71ex+l00mq1SCQSjMfjlX0u9Iiu6ySTSZrNJg6Hg1KpRCAQWBofCAQolUo4HA6azSbJZHJh8Tsv08cAm83GwcHB6+q6t7c3N4AgCBwfH+N0Ojk5OWF/f5/RaGQmvfnz6Gg0IpvNcnh4iK7rWCyWuRiLxcLp6SnD4ZBsNmsaAtaYkevWf6aObFutVgvwPjA/1zejP4Av7wAPmZ6qj24B4lvgXeDhbGl+Be4DHwDPbgDgmTHWh4AC8x55CgSBj4EX1wDwwsgdNMZ6rUVmfQV8w3TKHjN979hUZ8Aj4B0j96vzAat2zW/AZ8B7bOafIyPH58Dvy4LMbN9feOOfn9YAmPngvpFjpdapI0+ZbvMM8HJF3Eumb/xzPlilbavVugYLr4Afga+Z1p0gsG20nQFfAR8BPwBrVeytDb8q3mP6AeZP4AtMLMEy/Q32+ixExSESnQAAAABJRU5ErkJggg==" alt="code" height='32px' width="auto">
         <h1>
@@ -93,37 +111,36 @@
         <img class="section-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAnCAYAAABqippxAAAACXBIWXMAAC4jAAAuIwF4pT92AAADpklEQVRYhcWYT0gjVxzHP/OnDYliEt14UDwEN6VqJBC2eFARUVGkQlnagycPxcuWgnbbnvboJbAbak0RFOvRUxm1YPAWsAjiYRulBbGHEoIrZvFQJYmmZnrIxC2bZDKTRP3CQCbv937vM7/3e+/3ZgS3200V6gReab+fA39W6kissN8j4CcgCoxpV1T779F9gMjALHAMPNPu/9/2TGv7+r22moLknzoIOHTsHMCPvItWzUA6gbB2dRp1bLafHoiDCp6siAxFshhIVXNdQnq5VRSk6uwvo/dXWwHIY+BXysynw+HA4/Hc3ns8Hux2OwCyLOPz+RAEwQhQPn8UbWxE4CXwB/Bpud6BQICtrS2cTieNjY2Ew2ECgQAAU1NTKIrC0NCQEZC8PtPGfimT2xENqaGhAUmSqKurA0AUxduI1NfXA7momdSHwPNKd9aay9SKSCaTqKpKKpVCEARUVeXy8hKAdDoNwMXFRUUggtvtVo0au1wuWlpaiEajAPh8Pk5OTkgkElgsFvx+P3t7e2Sz2bsFuUvpTk1HRwerq6tYrVbTjq1WK4IgkEgk2N/fJxQKcXx8XNJeN1m7urpobm7GYrGYBpFlGUmScLlcTExMsLGxQX9/f2l7I04XFxeZn583BbKzs0Nrayvd3d1MT08zOztLMBhkYGCAZDJZYH/nyzedTrOwsEA4HKapqYnBwcGidve2j+zu7gLQ1tb2sCDt7e0AnJ+fPxxIb28vk5OTXF1dEYlEitrU4qxRVPnas7m5idfrBWBubo6zs7P7BbHZbAB4vV7i8TjBYJD19fWS9rogqVQKyFVdMxJFkUwmQyaTYXh4mNPT0/J99BoPDw8BGBsbuy39RjQyMoLNZuPg4MAQBJSJSCwWY3t7m9HRUdbW1giFQsTj8dLOZJmenh5mZmYAWF5eNgxftujZ7XZWVlbw+/2GnaqqSiAQYGlpqXYgAJIkMT4+Tl9fn+4J7ObmhlgshqIoHB0dGYbIg8wB3wDmS2xtlAKCIvCC3KlaeQCIX4CPgRf5VfM38BQYBF7fA8BrbazPgRgULt8I8AT4EnhzBwBvNN9PtLFuVWwfyQI/kwvZK+C6BgDX5N6fPtJ8Fxxq9Ta0f4BvgS6qyx9F8/EdcFnKyEj1/Yt3+fO7CYB8HjzVfOjKzDEgAnwCfAW81bF7S+6NvyAP9CQ5nU4TLGSBfWAZ+EAbTNLaroEfgC+A3wBTrylClV8VH5P7APMv8D0GpqCU/gMNHwOaCJzA+AAAAABJRU5ErkJggg==" alt="coffee" height='32px' width="auto">
         <h2>Exploring Diverse Projects: <br /> Showcasing Frontend Expertise</h2>
         <div class="project">
-          <h3>LangBe - German vocabulary learning app</h3>
-          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
-            frequency list with card repeating system similar to ANKI flashcards.</p>
-          <div class="sources">
-            <a href="" target="_blank">
-              <img width='14px' height='14px' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAACXBIWXMAAC4jAAAuIwF4pT92AAABIklEQVQokY3SPSuHURgG8J+XZCAmBgYDkZIUo8TAQiwGA9ml+AZWsfgASpiskoXibzQoGZEUo81Lysvw3Id/T8pz1ek+57ru6z7n3OfwizF84RbL6MUkZjCKAezhDZdyWMcjdvAZhfLjHrsxb67MFfjALLoxhCY0oj1O1oX9/K4VOMd1XvgDE7HzdCIGghgrYIZjlNKxOyOWCprP0JHMLxEbC5rr8ZzMqfVDBc2DuConTnGD1n+MS7L+jCeiDm24w7PsMyyiNvR+2T+4CONaMk7gHQtowAoeIqkncjZjfSj3IjXYCHE+uAMcleX0hT7y1z2qsB0JTxG3yvS24KbKTanbH5jDMFZljfsX1bn1SYyRKJjwFvG1SNEWNOe4Xtn1fvANF/JDqI5MuS4AAAAASUVORK5CYII=" alt="github">
-              Github
-            </a>
-            <a href="" target="_blank">
+          <div class="project-header">
+            <a href="https://langbe.online/" target="_blank">
+              <h3>LangBe - German vocabulary learning app</h3>
               <img width='14px' height='14px' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA0klEQVQokY3SsU5CQRCF4S9wsTBUUtnyDDTU8izUFEbttcCOxvewIiEx0cqSZ6AymmikMAEVxWIXsxD2wiSnmMn8e2Y2w+7o4hfLRJ/VPcB3TDBCDU1U4Qi3eMM00ROOkwf60e0OywJn6GCARdL4gdcEOsc1nnEiuj2UjLpy6se8J+xcCm5C4o7dMnATqlnfeSt4ucXpVPgwUMmM2MYVLpJaHYerpMiAnUz9P3KOO6OCbxzs0VvgJ03ucYNHfJWALeFqEG5ujBc0ovs8o6FwZTP4A0MWO3DutuZvAAAAAElFTkSuQmCC" alt="website">
-              View website
             </a>
           </div>
+          <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
+            frequency list with card repeating system similar to ANKI flashcards.</p>
+            <ul class="stack">
+              <li class="outline">SCSS</li>
+              <li class="outline">React</li>
+              <li class="outline">React Spring</li>
+              <li class="outline">Redux Toolkit</li>
+            </ul>
         </div>
         <div class="separator"></div>
         <div class="project">
-          <h3>Code Lovers - Creative agency website</h3>
+          <div class="project-header">
+            <a width='14px' height='14px' href="https://codelovers.pl" target="_blank">
+              <h3>Code Lovers - Creative agency website</h3>  
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA0klEQVQokY3SsU5CQRCF4S9wsTBUUtnyDDTU8izUFEbttcCOxvewIiEx0cqSZ6AymmikMAEVxWIXsxD2wiSnmMn8e2Y2w+7o4hfLRJ/VPcB3TDBCDU1U4Qi3eMM00ROOkwf60e0OywJn6GCARdL4gdcEOsc1nnEiuj2UjLpy6se8J+xcCm5C4o7dMnATqlnfeSt4ucXpVPgwUMmM2MYVLpJaHYerpMiAnUz9P3KOO6OCbxzs0VvgJ03ucYNHfJWALeFqEG5ujBc0ovs8o6FwZTP4A0MWO3DutuZvAAAAAElFTkSuQmCC" alt="website">
+            </a>
+          </div>
           <!-- TODO: Zmienić treść -->
           <p class="max-readable">React based app with interactive interface that user to learn vocabulary based on a
             frequency list with card repeating system similar to ANKI flashcards.</p>
-          <!-- TODO: Uzupełnić linki -->
-          <div class="sources">
-            <a href="" target="_blank">
-              <img width='14px' height='14px' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAACXBIWXMAAC4jAAAuIwF4pT92AAABIklEQVQokY3SPSuHURgG8J+XZCAmBgYDkZIUo8TAQiwGA9ml+AZWsfgASpiskoXibzQoGZEUo81Lysvw3Id/T8pz1ek+57ru6z7n3OfwizF84RbL6MUkZjCKAezhDZdyWMcjdvAZhfLjHrsxb67MFfjALLoxhCY0oj1O1oX9/K4VOMd1XvgDE7HzdCIGghgrYIZjlNKxOyOWCprP0JHMLxEbC5rr8ZzMqfVDBc2DuConTnGD1n+MS7L+jCeiDm24w7PsMyyiNvR+2T+4CONaMk7gHQtowAoeIqkncjZjfSj3IjXYCHE+uAMcleX0hT7y1z2qsB0JTxG3yvS24KbKTanbH5jDMFZljfsX1bn1SYyRKJjwFvG1SNEWNOe4Xtn1fvANF/JDqI5MuS4AAAAASUVORK5CYII=" alt="github">
-              Github
-            </a>
-            <a width='14px' height='14px' href="https://codelovers.pl" target="_blank">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA0klEQVQokY3SsU5CQRCF4S9wsTBUUtnyDDTU8izUFEbttcCOxvewIiEx0cqSZ6AymmikMAEVxWIXsxD2wiSnmMn8e2Y2w+7o4hfLRJ/VPcB3TDBCDU1U4Qi3eMM00ROOkwf60e0OywJn6GCARdL4gdcEOsc1nnEiuj2UjLpy6se8J+xcCm5C4o7dMnATqlnfeSt4ucXpVPgwUMmM2MYVLpJaHYerpMiAnUz9P3KOO6OCbxzs0VvgJ03ucYNHfJWALeFqEG5ujBc0ovs8o6FwZTP4A0MWO3DutuZvAAAAAElFTkSuQmCC" alt="website">
-              View website
-            </a>
-          </div>
+            <ul class="stack">
+              <li class="outline">Wordpress</li>
+              <li class="outline">Javascript</li>
+            </ul>
         </div>
         <!-- <div class="separator"></div> -->
       </div>
@@ -135,35 +152,13 @@
         <p>I'm Currently Seeking Frontend Developer Position</p>
         <ul class="contact">
           <li><a href="tel:+48514495696"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAC4jAAAuIwF4pT92AAABTUlEQVQ4jY3Sv0vWURQG8Od9DRL7gTkkBdIaFQ5hFA0vOIQhzo5RQzgGQVNLf0STo6OTjQpG/gVKoQhuERUF4mKglZ+GjvCWL77fA5d7OPfe5znPeW4LSXIuyVSSi0mOknxIsp4mgUFsOhlPkX4r6NSDBxjGCN5gowlAO8leNfOz8t0ky0luJRnup6CdZDvJQZK7XfWVJANJOk0ADpOsJZnpqs/W/r0fwLGWJzWHGxivfKHpEI+d+IZFnMVWOXOhKUAwV8wPcRv7WMX5Oh/DvSLrCTCANXzFNUzhR9n5Cr+LYB/v8Oh/gOAqPmGnGCcqh3ncwUssV63TS9fNAvmMSQxhGq2uO+3q5Fm7hzGbSe4n+ZhkNcnrJO+T6LpzlL8fr3XahM/gBfbwC0t4jOu4gkPM9fUZl/Ac6/6NXYy1cELDKTGaZDzJ5SRvk3z5A14CLHjngrvbAAAAAElFTkSuQmCC" alt="phone"> +48 514 495 696</a></li>
-          <li><a href="mailto:daria.tluczkiewicz@mail.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAYAAACgu+4kAAAACXBIWXMAAC4jAAAuIwF4pT92AAABAklEQVQokY2SQStEYRSGnxm3RhqFrJWFhbGzVdZsp/kB8gfYWlhYWMjGxtYvwIofoER2ykKakiizwMJIkcxjc4a7uNe9b52++s57ntN3voNaV4/UL8vrXd1RSYBtYAHYAN4opwawApyjHgf1Wp1VKYim+hI161WgDXSACnABrAEDGV2HgT3gALiKuwfiLXfqkLob5FN1MtV1Tr1VP9RVdTR8S2lA37yodtSuuqxuqt/qpToTnpH/AKjj6mGYeuqWWkvlfwFJzpSfgSbQAh6Bs7zvyAP0tV+Qp1pkKFICvAJjwDzQLVk3HecT6oR6X3qJ/3Si1ioqwCAwRfYCZekTuAF6P85ebEz5MeAUAAAAAElFTkSuQmCC"
-                alt="e-mail">daria.tluczkiewicz@mail.com</a></li>
+          <li><a href="mailto:daria230t@gmail.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAYAAACgu+4kAAAACXBIWXMAAC4jAAAuIwF4pT92AAABAklEQVQokY2SQStEYRSGnxm3RhqFrJWFhbGzVdZsp/kB8gfYWlhYWMjGxtYvwIofoER2ykKakiizwMJIkcxjc4a7uNe9b52++s57ntN3voNaV4/UL8vrXd1RSYBtYAHYAN4opwawApyjHgf1Wp1VKYim+hI161WgDXSACnABrAEDGV2HgT3gALiKuwfiLXfqkLob5FN1MtV1Tr1VP9RVdTR8S2lA37yodtSuuqxuqt/qpToTnpH/AKjj6mGYeuqWWkvlfwFJzpSfgSbQAh6Bs7zvyAP0tV+Qp1pkKFICvAJjwDzQLVk3HecT6oR6X3qJ/3Si1ioqwCAwRfYCZekTuAF6P85ebEz5MeAUAAAAAElFTkSuQmCC"
+                alt="e-mail">daria230t@gmail.com</a></li>
         </ul>
-        <button class="button outline"><a href="" download>Download CV <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAAACXBIWXMAAC4jAAAuIwF4pT92AAABWElEQVQ4jY2TzSutURTGf96OSwyUO5DMmPqYGBlJtwxdJcXQkDr+AykGhooUA1Ju3YmT2R35mirFyEdhYGAkJ2GCfgZny+u99nGeWoO91rOf9bHXRiVjPeqiem8Jj+pfdeAL7idLH+rUNT9wre6rlynfjtpSidhuuLCqNmWItepMKklNObHxQJz9ppUx9UVdiYklYT7bsYwZW1eL6m+1Q61Oiw2FqkYrEEJt9jOu1H6VHNBNCYdUhhtgEGgA2oA8sAX8Qp0LGVojlfxQN9X5SPyneqduJ8B5yNgZqSQHdAG9kfgtMAn0JUABeAWGw8UYLBM7BkiAIrAAjAATKUJdRvxdLAfUZ8T6SoxS34l6of5JzeJBXQ4Le6YeBP8/dS/F61Kf1UJ20EnqXAgPs6meqEfqVvBNB06jehr2tKPcPtWoG/6PqUwBw2q7mb8ZsyX1VX1S82pVjPsGoBe73TnegIAAAAAASUVORK5CYII="
+        <button class="button outline"><a href="files/cv.pdf" download>Download CV <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAAACXBIWXMAAC4jAAAuIwF4pT92AAABWElEQVQ4jY2TzSutURTGf96OSwyUO5DMmPqYGBlJtwxdJcXQkDr+AykGhooUA1Ju3YmT2R35mirFyEdhYGAkJ2GCfgZny+u99nGeWoO91rOf9bHXRiVjPeqiem8Jj+pfdeAL7idLH+rUNT9wre6rlynfjtpSidhuuLCqNmWItepMKklNObHxQJz9ppUx9UVdiYklYT7bsYwZW1eL6m+1Q61Oiw2FqkYrEEJt9jOu1H6VHNBNCYdUhhtgEGgA2oA8sAX8Qp0LGVojlfxQN9X5SPyneqduJ8B5yNgZqSQHdAG9kfgtMAn0JUABeAWGw8UYLBM7BkiAIrAAjAATKUJdRvxdLAfUZ8T6SoxS34l6of5JzeJBXQ4Le6YeBP8/dS/F61Kf1UJ20EnqXAgPs6meqEfqVvBNB06jehr2tKPcPtWoG/6PqUwBw2q7mb8ZsyX1VX1S82pVjPsGoBe73TnegIAAAAAASUVORK5CYII="
               alt="CV"></a></button>
       </div>
     </section>
-
-
-
-    <div class="gradient-bg">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </defs>
-      </svg>
-      <div class="gradients-container">
-        <div class="g1"></div>
-        <div class="g2"></div>
-        <div class="g3"></div>
-        <div class="g4"></div>
-        <div class="g5"></div>
-      </div>
-    </div>
-
   </div>
   
 </body>
