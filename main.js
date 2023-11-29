@@ -26,12 +26,10 @@ function closeNavigation() {
 // Function to disable body scrolling
 function disableBodyScroll(event) {
 	body.addEventListener('touchmove', preventScroll, { passive: false });
-	console.log('disabled');
 }
 
 // Function to enable body scrolling
 function enableBodyScroll() {
-    console.log('enabled');
 	body.removeEventListener('touchmove', preventScroll, { passive: false })}
 
 // Function to prevent default touchmove behavior
@@ -40,68 +38,75 @@ function preventScroll(event) {
 }
 
 
-// const hero = document.querySelector('.hero');
-// const skills = document.querySelector('.skills');
-// const experience = document.querySelector('.experience');
-// const projects = document.querySelector('.projects');
-// const footer = document.querySelector('.footer');
-// const typingText = document.querySelector('.typing-text');
+const skills = document.querySelector('.skills-container');
 
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('animate');
-//         } else {
-//             entry.target.classList.remove('animate');
-//         }
-//     });
-// }, {
-//     threshold: 0.6, // Adjust the threshold as needed
-// });
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        entry.isIntersecting
+        ? entry.target.classList.add('animate') 
+        : entry.target.classList.remove('animate');
+    });
+}, {
+    threshold: 0.6,
+});
 
-// observer.observe(hero);
-// observer.observe(skills);
-// observer.observe(experience);
-// observer.observe(projects);
-// observer.observe(footer);
-// observer.observe(typingText);
+observer.observe(skills);
+
+
+const typingText = document.querySelector('.typing-text');
+let typingStep = 1
+
+function typingAnimation(text, delay) {
+    let letters = text.split('')
+
+    for (let i = 0; i <= letters.length; i++) {
+        setTimeout(()=>{
+            if(typingStep > 2) {
+                return
+            }
+            if (i === letters.length) {
+                reverseTypingAnimation(100)
+                return
+            }
+            console.log(i)
+            let sentence = typingText.innerHTML.length === 0 ? letters[0] : `${typingText.innerHTML + letters[i]}`
+            sentence.concat(`${letters[i]}`)
+            typingText.innerHTML = sentence
+        }, delay * i)
+    }
+}
+
+
+
+function reverseTypingAnimation(delay) {
+    console.log('reverse')
+
+    for (let i = 0; i <= 5; i++) {
+        setTimeout(()=>{
+            if(typingStep > 1) {
+                return
+            }
+            if (i === 5 && typingStep <= 2) {
+                typingAnimation(' a Frontend Developer', 80)
+                typingStep++
+                return
+            }
+            console.log(i)
+            console.log(typingText.innerHTML)
+            let sentence = `${typingText.innerHTML.slice(0,-1)}`
+            console.log(sentence)
+            typingText.innerHTML = sentence
+        }, delay * i)
+    }
+}
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-
-    if(!isTouchDevice){
-        document.addEventListener('mousemove', handleMouseMove)
-        document.addEventListener('mouseleave', handleMouseLeave)
-    } else {
-        cursor.style.display = 'none'
-    }
-})
-
-const cursor = document.getElementById('cursor')
-
-function handleMouseMove(e) {
-    cursor.style.visibility = 'visible'
-    if (e.target.tagName === 'A'||
-    e.target.tagName === 'BUTTON' ||
-    e.target.parentNode === 'BUTTON' ||
-    e.target.parentNode === 'A'){
-        cursor.classList.add('big')
-    } else {
-        cursor.classList.remove('big')
-    }
-    const height = cursor.offsetHeight
-    const width = cursor.offsetWidth
-
     setTimeout(() => {
-        cursor.style.transform = `translate(${e.clientX - width/2}px, ${e.clientY - height/2}px)`
-    }, 20)
-}
-function handleMouseLeave () {
-
-    cursor.style.visibility = 'hidden'
-}
-
+        typingAnimation(`Hello, I'm Daria`, 100)
+    }, 200)
+})
 
 window.addEventListener('scroll', handleScroll)
 
@@ -118,7 +123,6 @@ function handleScroll() {
 
   window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
-        console.log('stop')
         document.getElementById('gradient-bg').classList.add('pause-animation')
     } else {
           document.getElementById('gradient-bg').classList.remove('pause-animation')

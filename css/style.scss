@@ -28,6 +28,9 @@ h1, h2 {
     font-size: 48px;
     line-height: 64px;
 }
+h1 {
+    min-height: 64px;
+}
 
 h2 {
     margin-bottom: 30px;
@@ -90,7 +93,7 @@ body {
 }
 
 .section-image {
-    height: 32px;
+    height: 40px;
     width: auto;
 }
 
@@ -181,6 +184,11 @@ section.hero {
     .button {
         margin-top: 30px;
     }
+
+    .typing-text {
+        display: contents;
+    }
+
     
 }
 
@@ -216,6 +224,7 @@ section.experience {
         display: flex;
         gap: 10px;
         flex-direction: column;
+        width: 100%;
 
         .position-header {
             display: flex;
@@ -304,6 +313,11 @@ section.footer {
     }
 }
 
+@media (max-width: 801px) {
+    h1 {
+        max-width: 475px;
+    }
+}
 @media (max-width: 750px) {
     .navigation {
         visibility: hidden;
@@ -512,5 +526,18 @@ section.footer {
     }
     .burger {
         right: 2.5vw;
+    }
+    
+    body.nav-open .navigation, body.nav-open .navigation .nav-item:last-child  {
+        right: 2.5vw;
+    }
+}
+@media (max-width: 350px) {
+    body.nav-open .navigation, body.nav-open .navigation .nav-item:last-child{
+        width: calc(100% - 5vw) !important;
+        
+        button {
+            width: 100%;
+        }
     }
 }

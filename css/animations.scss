@@ -5,25 +5,54 @@ h2 {
 .animate {
     h2 {
         transform: none;
-        transition: 0.4s  ease-out transform;
+        transition: 0.4s ease-out transform;
     }
 }
+.about-me, .container, .typing-text {
+  transition: 1s cubic-bezier(0.85,-0.01, 0.58, 1);
+}
 
-.typing-text.animate {
-    overflow: hidden;
-    border-right: 2px solid #ffffff;
-    white-space: nowrap;
-    animation: typing 2.2s steps(16) forwards;
-  }
-  @keyframes typing {
+.typing-text::after {
+  content: '';
+  margin-left: 10px;
+  display: inline-block;
+  transform: translateY(7px);
+  background-color: white;
+  height: 48px;
+  width: 4px;
+  animation: blinking 1.06s infinite;
+}
+  @keyframes blinking {
     0% {
-      width: 0;
+      background-color: transparent;
     }
-    70%{
-        border-right: 2px solid #ffffff;
+    50% {
+      background-color: white;
     }
+
     100% {
-      width: 100%;
-      border: none;
+      background-color: transparent;
     }
+  }
+
+  li.skill {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  
+  $transition-delay-increment: 0.1s;
+
+  .animate {
+    li.skill {
+      transform: translateX(0);
+      opacity: 1;
+      transition: 0.4s cubic-bezier(0.85,-0.01, 0.58, 1) all ;
+
+      @for $i from 1 through 13 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * $transition-delay-increment;
+        }
+      }
+    }
+
   }
