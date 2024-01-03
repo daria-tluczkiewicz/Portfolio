@@ -68,7 +68,6 @@ function typingAnimation(text, delay) {
                 reverseTypingAnimation(100)
                 return
             }
-            console.log(i)
             let sentence = typingText.innerHTML.length === 0 ? letters[0] : `${typingText.innerHTML + letters[i]}`
             sentence.concat(`${letters[i]}`)
             typingText.innerHTML = sentence
@@ -79,7 +78,6 @@ function typingAnimation(text, delay) {
 
 
 function reverseTypingAnimation(delay) {
-    console.log('reverse')
 
     for (let i = 0; i <= 5; i++) {
         setTimeout(()=>{
@@ -91,10 +89,7 @@ function reverseTypingAnimation(delay) {
                 typingStep++
                 return
             }
-            console.log(i)
-            console.log(typingText.innerHTML)
             let sentence = `${typingText.innerHTML.slice(0,-1)}`
-            console.log(sentence)
             typingText.innerHTML = sentence
         }, delay * i)
     }
@@ -125,6 +120,6 @@ function handleScroll() {
       if (window.scrollY > 20) {
         document.getElementById('gradient-bg').classList.add('pause-animation')
     } else {
-          document.getElementById('gradient-bg').classList.remove('pause-animation')
+        document.getElementById('gradient-bg').classList.remove('pause-animation')
       }
   })
