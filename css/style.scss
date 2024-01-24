@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geologica&family=Roboto:wght@400;700&display=swap');
+@import '/css/variables.scss';
 
 *, html {
     scroll-behavior: smooth !important;
@@ -12,7 +13,7 @@ h1, h2{
     font-family: 'geologica';
 }
 h3 {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 a, a:active, a:visited{
@@ -242,26 +243,135 @@ section.experience {
     }
 }
 
+$project-border: 1px solid rgba(255, 255, 255, 0.142);
+$project-transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+
 section.projects {
-    background-color: #f8f9fb;
+    background-color: $very-dark-gray;
+    
+    .container {
+        max-width: 1600px;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 24px;
+        transition: $project-transition;
+    }
 
     .project {
+        min-height: 60vh;
+        max-height: 90vh;
+        color: rgb(194, 193, 193);
+        flex: 30%;
+        flex-grow: 100;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        gap: 8px;
+        background-color: rgb(255 255 255 / 3%);
+        border-radius: 20px;
+        padding: 8px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px 0.602187px 0.301094px -1.16667px,
+         rgba(0, 0, 0, 0.153) 0px 2.28853px 1.14427px -2.33333px, 
+         rgba(0, 0, 0, 0.075) 0px 10px 5px -3.5px;
+        transition: $project-transition;
+        
 
-        .project-header a {
+         &:hover {
+            flex-grow: 200;
+            transition: $project-transition;
+
+            &.memo > div {
+                background-color: $memo-color;
+            }
+
+            div { 
+                transition: $project-transition;
+            }
+            .project-image {
+                transform: scale(1.1) rotate3d(1, 1, 1, 45deg);
+            }
+            .project-description {
+                display: block;
+                transition: $project-transition;
+                
+                p, .stack {
+                    transform: translateY(0);
+                    transition: inherit;
+                    transition-delay: .3s;   
+                }
+            }
+         }
+
+        .project-header {
+            border: $project-border;
+            background-color: $very-dark-gray;
+            border-radius: 10px;
+            padding: 30px;
+            
+
+            
+            a {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             gap: 20px;
+            }
        
             h3 {
                 font-weight: bold;
             }
+            
             img{
                 width: 15px;
                 height: 15px;
+            }
+        }
+
+        .project-body {
+            border: $project-border;
+            border-radius: 10px;
+            background-color: $very-dark-gray;
+            padding: 30px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            
+            
+
+            .project-image {
+                border-radius: 10px;
+                overflow: hidden;
+                background-image: url('../img/memo-game.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 100%;
+                margin-right: 30px;
+            }
+        }
+
+        .project-description {
+            background-color: #646cff8f;
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            display: none;
+
+            p, .stack {
+                color: black;
+                margin-top: auto;
+                transform: translateY(30px);
             }
         }
 
@@ -271,21 +381,14 @@ section.projects {
             flex-wrap: wrap;
 
             .outline {
-                border: 1px solid black;
-                border-radius: 3px;
-                padding: 5px;
+                color: inherit;
+                border: $project-border;
+                border-radius: 5px;
+                padding: 8px;
                 display: inline-block;
             }
         }
     }
-    .separator {
-        background-color: black;
-    }
-}
-.separator {
-    height: 1px;
-    width: 100px;
-    margin: 20px 0;
 }
 
 section.footer {
