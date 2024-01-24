@@ -40,17 +40,17 @@ function preventScroll(event) {
 
 const skills = document.querySelector('.skills-container');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        entry.isIntersecting
-        ? entry.target.classList.add('animate') 
-        : entry.target.classList.remove('animate');
-    });
-}, {
-    threshold: 0.6,
-});
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         entry.isIntersecting
+//         ? entry.target.classList.add('animate') 
+//         : entry.target.classList.remove('animate');
+//     });
+// }, {
+//     threshold: 0.6,
+// });
 
-observer.observe(skills);
+// observer.observe(skills);
 
 
 const typingText = document.querySelector('.typing-text');
@@ -116,10 +116,10 @@ function handleScroll() {
   }
 
 
-  window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        document.getElementById('gradient-bg').classList.add('pause-animation')
-    } else {
-        document.getElementById('gradient-bg').classList.remove('pause-animation')
-      }
-  })
+//   window.addEventListener('scroll', () => {
+//       if (window.scrollY > 20) {
+//         document.getElementById('gradient-bg').classList.add('pause-animation')
+//     } else {
+//         document.getElementById('gradient-bg').classList.remove('pause-animation')
+//       }
+//   })
