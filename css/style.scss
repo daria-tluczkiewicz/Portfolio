@@ -5,12 +5,22 @@
 *, html {
     scroll-behavior: smooth !important;
 }
-
 h3, p, li, a, div {
     font-family: 'Roboto';
 }
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
 h1, h2{
     font-family: 'geologica';
+    line-height: 64px;
 }
 h3 {
     font-size: 24px;
@@ -25,17 +35,6 @@ p {
     line-height: 28px;
 }
 
-h1, h2 {
-    font-size: 48px;
-    line-height: 64px;
-}
-h1 {
-    min-height: 64px;
-}
-
-h2 {
-    margin-bottom: 30px;
-}
 
 ul {
     list-style-type: none;
@@ -45,6 +44,8 @@ body {
     position: relative;
     overflow-x: hidden;
     background-color: black;
+    color: white;
+    font-family: 'Geologica';
 }
 
 .max-readable {
@@ -53,13 +54,12 @@ body {
 
 .button {
     padding: 0;
-    background-color: rgb(0, 0, 0);
     border: none;
     border-radius: 6px;
     
     a {
+        color: white;
         font-size: 16px;
-        color: #f8f9fb !important;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -110,7 +110,7 @@ section .container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
     gap: 24px;
 }
@@ -129,14 +129,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
+
     .name {
-        color: white;
         font-weight: bold;
         margin-right: 20px;
     }
 
     .navigation {
-        
         gap: 20px;
         align-items: center;
 
@@ -145,10 +144,7 @@ nav {
             
 
             a {
-                color: white;
                 position: relative;
-                text-decoration: none;
-                font-family: 'Roboto';   
             }
         }
     }
@@ -157,12 +153,6 @@ nav {
 body.scrolled nav {
     background-color: rgb(70 66 66 / 70%);
     backdrop-filter: blur(4px);
-
-    .button {
-        a {
-            color:white !important;
-        }
-    }
 }
 
 nav, body.scrolled nav {
@@ -179,9 +169,6 @@ section.hero {
     color: white;
     position: relative;
 
-    .container{
-        gap: 24px;
-    }
     .button {
         margin-top: 30px;
     }
@@ -195,10 +182,6 @@ section.hero {
 
 section.skills {
     background-color: #212121;
-
-    h2{
-        color: white;
-    }
 
     .skills-container {
         display: flex;
@@ -219,7 +202,6 @@ section.skills {
 
 section.experience {
     background-color: #323232;
-    color: white;
 
     .position {
         display: flex;
@@ -238,13 +220,9 @@ section.experience {
             }
         }
     }
-    .separator {
-        background-color: white;
-    }
 }
 
-$project-border: 1px solid rgba(255, 255, 255, 0.142);
-$project-transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+
 
 section.projects {
     background-color: $very-dark-gray;
@@ -258,6 +236,7 @@ section.projects {
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
+        width: 100%;
         gap: 24px;
         transition: $project-transition;
     }
@@ -265,68 +244,134 @@ section.projects {
     .project {
         min-height: 60vh;
         max-height: 90vh;
-        color: rgb(194, 193, 193);
-        flex: 30%;
-        flex-grow: 100;
+        flex: 1 400px;
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 8px;
+        gap: 16px;
         background-color: rgb(255 255 255 / 3%);
         border-radius: 20px;
         padding: 8px;
-        box-shadow: rgba(0, 0, 0, 0.17) 0px 0.602187px 0.301094px -1.16667px,
-         rgba(0, 0, 0, 0.153) 0px 2.28853px 1.14427px -2.33333px, 
+        box-shadow: rgba(0, 0, 0, 0.17) 0px 1px .3px -1px,
+         rgba(0, 0, 0, 0.153) 0px 2.3px 1.1px -2px, 
          rgba(0, 0, 0, 0.075) 0px 10px 5px -3.5px;
         transition: $project-transition;
+
+
+        &.memo {
+
+            .project-image{
+                background-image: url('../img/memo-game.png');
+            }
+        }
+       
         
 
          &:hover {
-            flex-grow: 200;
+            flex: 3 400px;
             transition: $project-transition;
-
-            &.memo > div {
-                background-color: $memo-color;
-            }
 
             div { 
                 transition: $project-transition;
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
             }
+
+            &.memo > div {
+                background-image: linear-gradient($memo-color, $memo-color), 
+                    radial-gradient(circle at top left, $memo-border-gradient-start, $memo-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
+                0 0 10px $memo-color;
+            }
+
+            &.langbe > div {
+                background-image: linear-gradient($langbe-color, $langbe-color), 
+                    radial-gradient(circle at top left, $langbe-border-gradient-start, $langbe-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
+                0 0 10px $langbe-color;
+            }
+
+            &.tip-calculator > div {
+                background-image: linear-gradient($tip-calculator-color, $tip-calculator-color), 
+                    radial-gradient(circle at top left, $tip-calculator-border-gradient-start, $tip-calculator-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
+                0 0 10px $tip-calculator-color;
+            }
+
+            &.code-lovers > div {
+                background-image: linear-gradient($code-lovers-color, $code-lovers-color), 
+                                radial-gradient(circle at top left, $code-lovers-border-gradient-start, $code-lovers-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
+                0 0 10px $code-lovers-color;
+            }
+            
+            &.dentamedic > div {
+                background-image: $dentamedic-color, 
+                                radial-gradient(circle at top left, $dentamedic-border-gradient-start, $dentamedic-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
+                0 0 10px $dentamedic-color;
+            }
+            
+            &.maxtor > div {
+                background-image: linear-gradient($maxtor-color, $maxtor-color), 
+                                radial-gradient(circle at top left, $maxtor-border-gradient-start, $maxtor-border-gradient-end);
+                box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208), 0 0 10px $maxtor-color;
+            }
+            
+
             .project-image {
-                transform: scale(1.1) rotate3d(1, 1, 1, 45deg);
+                transform: scale(1.1);
             }
+
             .project-description {
-                display: block;
+                opacity: 1;
+                visibility: visible;
                 transition: $project-transition;
                 
                 p, .stack {
+                    opacity: 1;
                     transform: translateY(0);
-                    transition: inherit;
-                    transition-delay: .3s;   
+                    transition: $project-transition;
+                    transition-duration: .7s;
+                    transition-delay: .1s;   
                 }
             }
          }
 
         .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border: $project-border;
             background-color: $very-dark-gray;
-            border-radius: 10px;
             padding: 30px;
-            
-
-            
-            a {
+            border-radius: 20px;
             display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            gap: 20px;
+            gap: 10px;
+
+            .links {
+                display: flex;
+                gap: 10px;
             }
-       
+
+            a {
+                display: block;
+                height: 40px;
+                width: 40px;
+            }
+            
+            a.github {
+                background: url('../img/github.png') 0 0 /contain no-repeat;
+            }
+            a.live-site {
+                background: url('../img/link.png') 0 0 /contain no-repeat;
+            }
+            
             h3 {
                 font-weight: bold;
             }
             
-            img{
+            img {
                 width: 15px;
                 height: 15px;
             }
@@ -334,46 +379,73 @@ section.projects {
 
         .project-body {
             border: $project-border;
-            border-radius: 10px;
+            border-radius: 20px;
             background-color: $very-dark-gray;
             padding: 30px;
             height: 100%;
             position: relative;
             overflow: hidden;
+            visibility: visible;
             display: flex;
-            align-items: center;
-            
-            
+            align-items: flex-start;
+            justify-content: center;
 
             .project-image {
-                border-radius: 10px;
-                overflow: hidden;
-                background-image: url('../img/memo-game.png');
-                background-size: contain;
+                width: 80%;
+                aspect-ratio: 3/5;
+                padding: 20px;
+                padding-top: 60px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
                 background-repeat: no-repeat;
-                height: 100%;
-                width: 100%;
-                margin-right: 30px;
-            }
+                border: 10px solid #2c2c2c; 
+                border-radius: 20px;
+                position: relative;
+                background-size: cover;
+                background-position: 50%;
+              }
+              
+              .project-image::before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 30%;
+                height: 10px;
+                background-color: #2c2c2c;
+                border-radius: 0 0 5px 5px;
+              }
+        }
+        .memo .project-description{
+            background-color: $memo-background-color;
+        }
+        .langbe .project-description{
+            background-color: $langbe-background-color;
         }
 
         .project-description {
-            background-color: #646cff8f;
-            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 10px;
+            box-shadow: inset 0px -111px 139px -72px rgba(0, 0, 0, 0.466);
             padding: 30px;
             position: absolute;
             height: 100%;
             width: 100%;
             bottom: 0;
             left: 0;
-            display: none;
-
+            opacity: 0;
+            visibility: hidden;
+            transition: $project-transition;
+            
             p, .stack {
-                color: black;
-                margin-top: auto;
+                opacity: 0;
+                transition: $project-transition;
                 transform: translateY(30px);
             }
         }
+        
 
         .stack {
             display: flex;
@@ -393,7 +465,6 @@ section.projects {
 
 section.footer {
     background-color: #212121;
-    color: white;
     
     .contact, .contact li {
         display: flex;
@@ -480,14 +551,8 @@ section.footer {
             opacity: 0.9;
             transition: 0.2s ease-out transform;
         }
-        .name a {
-            color: white !important;
-        }
 
         .burger {
-            // .line, .line::before, .line::after {
-            //     background-color: #212121;
-            // }
             .line::after, .line::before {
                 top: 0;
                 transition: .5s .3s transform, .2s .1s top, .1s  background-color;
