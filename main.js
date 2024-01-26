@@ -13,7 +13,7 @@ function toggleMobileMenu () {
 const navItems = document.querySelectorAll('.nav-item');
 const nameButton = document.querySelector('.name a');
 
-nameButton.addEventListener('click', closeNavigation)
+// nameButton.addEventListener('click', closeNavigation)
 
 navItems.forEach(item => {
     item.addEventListener('click', closeNavigation)
@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 200)
 })
 
+const scrollToTopButton = document.getElementById('scroll-top-button')
 window.addEventListener('scroll', handleScroll)
 
 function handleScroll() {
@@ -110,16 +111,23 @@ function handleScroll() {
     const threshold = 100;
     if (scrollY >+ threshold) {
       document.body.classList.add('scrolled');
+      scrollToTopButton.classList.add('show')
     } else {
       document.body.classList.remove('scrolled');
+      scrollToTopButton.classList.remove('show')
     }
   }
 
 
-//   window.addEventListener('scroll', () => {
-//       if (window.scrollY > 20) {
-//         document.getElementById('gradient-bg').classList.add('pause-animation')
-//     } else {
-//         document.getElementById('gradient-bg').classList.remove('pause-animation')
-//       }
-//   })
+const nav = document.getElementById('nav')
+
+navItems.forEach((item, index) => item.addEventListener('mouseenter', function () {
+    nav.classList.add(item.classList[1])
+}))
+
+navItems.forEach((item, index) => item.addEventListener('mouseleave', function () {
+    nav.classList.remove(item.classList[1])
+}))
+
+
+

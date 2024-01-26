@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geologica&family=Roboto:wght@400;700&display=swap');
 @import '/css/variables.scss';
+@import 'css/3d.scss';
 
 *, html {
     scroll-behavior: smooth !important;
@@ -56,6 +57,8 @@ body {
     padding: 0;
     border: none;
     border-radius: 6px;
+    background-color: $nav-cv-color;
+    box-shadow: 0px 0px 10px 1px inset darken($nav-cv-color, 20%);
     
     a {
         color: white;
@@ -71,31 +74,36 @@ body {
         height: 13px;
         width: auto;
     }
+
+    &.cv img {
+        height: 20px;
+    }
+
+    &.about {
+        img {
+            transition: 0.1s ease-out all;
+        }
+        
+        &:hover {
+            img {
+                transform: translateX(10px);
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 10px 1px inset lighten($nav-cv-color, 20%);
+    }
 }
 .button, button:hover, .button img {
     transition: 0.1s ease-out all;
 }
 
-.button.about {
 
-    img {
-        transition: 0.1s ease-out all;
-    }
-    
-    &:hover {
-        img {
-            transform: translateX(10px);
-        }
-    }
-}
-.button.outline {
-    background-color: #212121;
-    border: 1px solid #f8f9fb;
-}
 
 .section-image {
-    height: 40px;
-    width: auto;
+    height: 50px;
+    width: 50px;
 }
 
 section {
@@ -117,38 +125,85 @@ section .container {
 
 nav, nav ul {
     display: flex;
-    flex-direction: row;
 }
 
 nav {
     z-index: 15;
-    padding: 0 5vw;
-    width: 100%;
-    height: 77px;
+    margin: 20px 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: fit-content;
+    max-width: 95vw;
+    border-radius: 10px;
+    background-color: $dark-gray;
     position: fixed;
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
+    box-shadow: 0px 0px 7px 1px inset rgb(210 202 202 / 50%);
+    transition: .5s .1s ease all;
 
-    .name {
-        font-weight: bold;
-        margin-right: 20px;
+    &.skills {
+        box-shadow: 0px 0px 10px 1px inset $nav-skills-color;
+        background-color: darken($nav-skills-color, 60%);
+        transition: 1s;
     }
-
-    .navigation {
-        gap: 20px;
-        align-items: center;
-
-        .nav-item {
-            position: relative;
-            
-
-            a {
-                position: relative;
-            }
-        }
+    &.projects {
+        box-shadow: 0px 0px 10px 1px inset $nav-projects-color;
+        background-color: darken($nav-projects-color, 60%);
+        transition: .3s;
+    }
+    &.experience {
+        box-shadow: 0px 0px 10px 1px inset $nav-experience-color;
+        background-color: darken($nav-experience-color, 60%);
+        transition: .3s;
+    }
+    &.contact {
+        box-shadow: 0px 0px 10px 1px inset $nav-contact-color;
+        background-color: darken($nav-contact-color, 60%);
+        transition: .3s;
+    }
+    &.cv {
+        box-shadow: 0px 0px 10px 1px inset $nav-cv-color;
+        background-color: darken($nav-cv-color, 60%);
+        transition: .3s;
     }
 }
+
+.navigation {
+    gap: 20px;
+    align-items: center;
+
+    .nav-item a {
+        padding: 15px;
+    }
+}
+
+.scroll-top-button {
+    z-index: 23;
+    position: fixed;
+    bottom: 64px;
+    right: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    opacity: 0;
+    transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+    transform: translateY(-30px);
+    visibility: hidden;
+    
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+    }
+}
+
+
 
 body.scrolled nav {
     background-color: rgb(70 66 66 / 70%);
@@ -156,7 +211,7 @@ body.scrolled nav {
 }
 
 nav, body.scrolled nav {
-    transition: cubic-bezier(0.13, 0.63, 0.32, 1);
+    transition: .3s cubic-bezier(0.13, 0.63, 0.32, 1);
     transition-duration: .2s;
 }
 
@@ -167,7 +222,21 @@ section.hero {
     max-height: 100vh;
     width: 100%;
     color: white;
+    background-color: #3c3c3e;
     position: relative;
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: row;
+        gap: 5vw;
+        align-items: center;
+    }
 
     .button {
         margin-top: 30px;
@@ -242,8 +311,6 @@ section.projects {
     }
 
     .project {
-        min-height: 60vh;
-        max-height: 90vh;
         flex: 1 400px;
         display: flex;
         flex-direction: column;
@@ -306,7 +373,7 @@ section.projects {
             }
             
             &.dentamedic > div {
-                background-image: $dentamedic-color, 
+                background-image: linear-gradient($dentamedic-color,$dentamedic-color),
                                 radial-gradient(circle at top left, $dentamedic-border-gradient-start, $dentamedic-border-gradient-end);
                 box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208),
                 0 0 10px $dentamedic-color;
@@ -320,7 +387,7 @@ section.projects {
             
 
             .project-image {
-                transform: scale(1.1);
+                transform: scale(1.1) translateY(55px);
             }
 
             .project-description {
@@ -394,7 +461,6 @@ section.projects {
                 width: 80%;
                 aspect-ratio: 3/5;
                 padding: 20px;
-                padding-top: 60px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
                 background-repeat: no-repeat;
                 border: 10px solid #2c2c2c; 
@@ -492,11 +558,19 @@ section.footer {
         max-width: 475px;
     }
 }
-@media (max-width: 750px) {
+@media (max-width: 633px) {
+   
+    nav {
+        visibility: hidden;
+        margin: 2.5vw;
+        transform: translateX(0);
+        width: 100%;
+
+    }
     .navigation {
         visibility: hidden;
         opacity: 0;
-        transform: translateX(100%);
+        // transform: translateX(200%);
         transition: 0.2s ease-out transform .2s .4s ease display;
     }
     
@@ -504,25 +578,27 @@ section.footer {
         transition: 0.1s ease-out;
     }
     .burger {
+        visibility: visible;
         display: flex;
         position: fixed;
-        right: 5vw;
-        top: 23px;
+        right: 2.5vw;
+        top: 20px;
         align-items: center;
         justify-content: center;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
 
-        .line{
-            transition: .2s .5s background-color;
+        .line {
+            transition: .2s .5s background-color,  .2s .5s box-shadow;
             position: relative
         }
 
         .line, .line::after, .line::before {
             border-radius: 2px;
-            height: 3px;
+            height: 4px;
             width: 100%;
             background-color: #f8f9fb;
+            box-shadow: 0 0 1px .5px inset rgb(194, 194, 194);
         }
         .line::after, .line::before {
             content: '';
@@ -531,10 +607,10 @@ section.footer {
 
         }
         .line::before {
-            top: -10px;
+            top: -12px;
         }
         .line::after {
-            top: 10px;
+            top: 12px;
         }
     }
 
@@ -560,9 +636,10 @@ section.footer {
     
             .line {
                 background-color: transparent;
+                box-shadow: unset;
                 height: 0px;
                 padding-top:3px;
-                transition: .5s .3s transform, .2s .1s top, .1s  background-color;
+                transition: .5s .3s transform, .2s .1s top, .1s  background-color, .1s box-shadow;
             }
     
             .line::before {
@@ -573,15 +650,12 @@ section.footer {
                 transform: rotate(-45deg);
             }
         }
-        nav {
-            background-color: transparent;
-        }
         .navigation {
             box-shadow:  0 0 50px #00000012;
             transform: none;
             visibility: visible;
             position: fixed;
-            right: 5vw;
+            right: 2.5vw;
             top: 97px;
             width: 300px;
             flex-direction: column;
@@ -589,6 +663,7 @@ section.footer {
             border-radius: 6px;
             opacity: 1;
             gap: 0;
+            padding: 15px;
 
             .name a {
                 background-color: #212121;
@@ -596,6 +671,7 @@ section.footer {
             }
             
             .nav-item {
+                font-weight: bold;
                 border-radius: 6px;
                 width: 100%;
                 padding: 0;
@@ -612,34 +688,8 @@ section.footer {
                     color:#212121;
                     position: relative;
                 }
-
-                &:hover{
-                    a::after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        height: 8px;
-                        width: 8px;
-                        top: 24px;
-                        right: 30px;
-                        border-radius: 4px;
-                        background-color: #8c33ec;
-                    }
-                }
-            }
-            .nav-item:last-child {
-                width: 300px !important;
-                padding: 0;
-                position: fixed;
-                top: 341px;
-                right: 5vw;
-
-                .button {
-                    
-                    a {
-                        width: 300px;
-                    }
-                    
+                button a {
+                    color: white;
                 }
             }
         }
@@ -688,12 +738,6 @@ section.footer {
     section, section.hero {
         padding-left: 2.5vw;
         padding-right: 2.5vw;
-    }
-    nav {
-        padding: 0 2.5vw;
-    }
-    .burger {
-        right: 2.5vw;
     }
     
     body.nav-open .navigation, body.nav-open .navigation .nav-item:last-child  {

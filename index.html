@@ -9,36 +9,48 @@
   <link rel="stylesheet" href="css/style.scss" />
   <link rel="stylesheet" href="css/animations.scss" />
   <link rel="stylesheet" href="css/gradient-bg.scss">
-  <title>Portfolio</title>
+  <title>Daria Tłuczkiewicz - Portfolio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-
 <body>
-  <div class="cursor" id="cursor"></div>
+  <a href='#' class="scroll-top-button" id="scroll-top-button"><img src="./img/arrow-up.png"></a>
   <div class="blend-mode-wrapper">
     <div class="overlay"></div>
-    <nav>
-      <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div>
+    <nav id="nav">
+      <!-- <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div> -->
       <div class="burger">
         <div class="line"></div>
       </div>
       <ul class="navigation">
-        <li class="nav-item"><a href="#skills">Skills</a></li>
-        <li class="nav-item"><a href="#experience">Experience</a></li>
-        <li class="nav-item"><a href="#projects">Portfolio</a></li>
-        <li class="nav-item"><a href="#contact">Contact</a></li>
-        <li class="nav-item"><button class="button link"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download-cloud.png"
+        <li class="nav-item skills" ><a href="#skills" id="nav-skills">Skills</a></li>
+        <li class="nav-item experience" id="nav-experience"><a href="#experience">Experience</a></li>
+        <li class="nav-item projects" id="nav-projects"><a href="#projects">Projects</a></li>
+        <li class="nav-item contact" id="nav-contact"><a href="#contact">Contact</a></li>
+        <li class="nav-item cv"><button class="button cv link"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
                 alt="CV"></a></button></li>
-      </ul>
-    </nav>
-    <section class="hero" id="hero">
+              </ul>
+            </nav>
+            <section class="hero" id="hero">
       <div class="container max-readable">
-        <img class="section-image" src="img/code.png" alt="code" height='32px' width="auto">
-        <h1> <span class="typing-text"></span></h1>
-        <p class="about-me ">I'm a passionate web developer with expertise in creating responsive and interactive interfaces. 
-          Proficient in HTML, CSS and JavaScript for crafting exceptional frontend experiences. Currently expanding my knowledge of React with Typescript and grasping Next JS.
-          </p>
-        <button class="button about link"><a href="#skills" class="link">About me <img src="img/arrow-down.png" alt=""></a></button>
+        
+        <!-- <div class="scene-container">
+          <div class="scene">
+              <div class="floor"></div>
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="tablet"></div>
+              <div class="phone"></div>
+              <div class="circle-right"></div>
+          </div>
+        </div>   -->
+        <div class="introduction">
+          <img class="section-image" src="img/code.png" alt="code" height='32px' width="auto">
+          <h1> <span class="typing-text"></span></h1>
+          <p class="about-me ">I'm a passionate web developer with expertise in creating responsive and interactive interfaces. 
+            Proficient in HTML, CSS and JavaScript for crafting exceptional frontend experiences. Currently expanding my knowledge of React with Typescript and grasping Next JS.
+            </p>
+          <button class="button about link"><a href="#skills" class="link">About me <img src="img/arrow-down.png" alt=""></a></button>
+        </div>
       </div>
     </section>
     <section class="skills" id="skills">
@@ -63,7 +75,8 @@
     </section>
     <section class="experience" id="experience">
       <div class="container">
-        <img class="section-image" src="img/briefcase.png" alt="briefcase" height='32px' width="auto">
+        <svg class="section-image" fill="#c66b7e" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 483.013 483.013" xml:space="preserve" stroke="#c66b7e"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292 L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926 c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"></path> </g></svg>
+        <!-- <div class="section-image" src="img/briefcase.png" alt="briefcase" height='32px' width="auto"></div> -->
         <h2>Experience</h2>
         <div class="position">
           <div class="position-header">
@@ -218,7 +231,7 @@
           <li><a href="https://github.com/ohdaridari" class="link" target="_blank"><img src="img/github.png"
                 alt="github">Github</a></li>
         </ul>
-        <button class="button outline"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download-cloud.png"
+        <button class="button cv"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
               alt="CV"></a></button>
       </div>
     </section>

@@ -72,67 +72,89 @@ h2 {
     }
   }
 
-  .button {
-    position: relative;
-    background-color: #333333;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
+  // .button {
+  //   position: relative;
+  //   background-color: #333333;
+  //   overflow: hidden;
+  //   transition: all 0.5s ease-in-out;
 
-    a {
-      position: relative;
-      z-index: 10;
-    }
+  //   a {
+  //     position: relative;
+  //     z-index: 10;
+  //   }
   
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      transition: all 0.5s ease-in-out;
-    }
+  //   &:before,
+  //   &:after {
+  //     content: '';
+  //     position: absolute;
+  //     transition: all 0.5s ease-in-out;
+  //   }
   
-    &:before {
-      width: 3rem;
-      height: 3rem;
-      background-color: #805ad5;
-      border-radius: 50%;
-      box-shadow: 20px 20px 20px 30px #a21caf;
-      right: 1rem;
-      top: 1rem;
-      z-index: 10;
-      filter: blur(8px);
-    }
+  //   &:before {
+  //     width: 3rem;
+  //     height: 3rem;
+  //     background-color: #805ad5;
+  //     border-radius: 50%;
+  //     box-shadow: 20px 20px 20px 30px #a21caf;
+  //     right: 1rem;
+  //     top: 1rem;
+  //     z-index: 10;
+  //     filter: blur(8px);
+  //   }
   
-    &:after {
-      width: 5rem;
-      height: 5rem;
-      background-color: #f687b3;
-      right: 2rem;
-      top: 3rem;
-      z-index: 10;
-      border-radius: 50%;
-      filter: blur(8px);
-    }
+  //   &:after {
+  //     width: 5rem;
+  //     height: 5rem;
+  //     background-color: #f687b3;
+  //     right: 2rem;
+  //     top: 3rem;
+  //     z-index: 10;
+  //     border-radius: 50%;
+  //     filter: blur(8px);
+  //   }
   
-    &:hover {
-      border-color: #c09898;;
-      color: #ed64a6;
-      &:before {
-        box-shadow: 20px 20px 20px 30px #a21caf;
-        filter: blur(8px);
-      }
-    }
+  //   &:hover {
+  //     border-color: #c09898;;
+  //     color: #ed64a6;
+  //     &:before {
+  //       box-shadow: 20px 20px 20px 30px #a21caf;
+  //       filter: blur(8px);
+  //     }
+  //   }
   
-    &:hover:before {
-      right: 5rem;
-      top: -3rem;
-      filter: blur(8px);
+  //   &:hover:before {
+  //     right: 5rem;
+  //     top: -3rem;
+  //     filter: blur(8px);
       
-    }
+  //   }
     
-    &:hover:after {
-      right: -8rem;
-      top: 3rem;
-      filter: blur(8px);
+  //   &:hover:after {
+  //     right: -8rem;
+  //     top: 3rem;
+  //     filter: blur(8px);
+  //   }
+  // }
+
+
+
+
+  @keyframes drawPath {
+    0% {
+      stroke-dashoffset: 200;
+    }
+    100% {
+      stroke-dashoffset: 0;
     }
   }
+  .svg-icon {
+    width: 100px;
+  }
 
+  .svg-icon path {
+    fill: none;
+    stroke: #000;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawPath 5s ease-out forwards;
+  }

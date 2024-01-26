@@ -1,8 +1,21 @@
+//Navigation
+
+$nav-skills-color:#FF6F61;
+$nav-experience-color:#008080;
+$nav-projects-color:#4169E1;
+$nav-contact-color:#FF8243;
+$nav-cv-color:#b930ee;
+
+
+
+
+//Projects
+
 $dark-gray: #323232;
 $very-dark-gray: #212121;
 $memo-color: #703047;
 $langbe-color: #e8713a;
-$tip-calculator-color: #00494d;
+$tip-calculator-color: #c5e4e7;
 $code-lovers-color: #9f7929;
 $dentamedic-color: #bbbdbe;
 $maxtor-color: #d3093c;
@@ -34,3 +47,5 @@ $dentamedic-background-color: rgba($dentamedic-color, 0.7);
 $maxtor-border-gradient-start: lighten($maxtor-color, 10%);
 $maxtor-border-gradient-end: darken($maxtor-color, 10%);
 $maxtor-background-color: rgba($maxtor-color, 0.7);
+
+
