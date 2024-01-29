@@ -34,43 +34,43 @@ h2 {
       background-color: transparent;
     }
   }
-  $transition-delay-increment: 0.1s;
-  li.skill {
-    transform: translateX(200px);
-    opacity: 0;
-    animation: slide-in linear forwards;
-    animation-timeline: view(50% 10%);
-    animation-duration: 0.4s;
-    transition: 0.4s cubic-bezier(0.85,-0.01, 0.58, 1) all ;
+  // $transition-delay-increment: 0.1s;
+  // li.skill {
+  //   transform: translateX(200px);
+  //   opacity: 0;
+  //   animation: slide-in linear forwards;
+  //   animation-timeline: view(50% 10%);
+  //   animation-duration: 0.4s;
+  //   transition: 0.4s cubic-bezier(0.85,-0.01, 0.58, 1) all ;
 
-    @for $i from 1 through 13 {
-      &:nth-child(#{$i}) {
-        animation-delay: $i * $transition-delay-increment;
-      }
-    }
-  }
+  //   @for $i from 1 through 13 {
+  //     &:nth-child(#{$i}) {
+  //       animation-delay: $i * $transition-delay-increment;
+  //     }
+  //   }
+  // }
   
 
-  .animate {
-    li.skill {
-      // transform: translateX(0);
-      // opacity: 1;
-      // transition: 0.4s cubic-bezier(0.85,-0.01, 0.58, 1) all ;
+  // .animate {
+  //   li.skill {
+  //     // transform: translateX(0);
+  //     // opacity: 1;
+  //     // transition: 0.4s cubic-bezier(0.85,-0.01, 0.58, 1) all ;
 
-      @for $i from 1 through 13 {
-        &:nth-child(#{$i}) {
-          animation-delay: $i * $transition-delay-increment;
-        }
-      }
-    }
-  }
+  //     @for $i from 1 through 13 {
+  //       &:nth-child(#{$i}) {
+  //         animation-delay: $i * $transition-delay-increment;
+  //       }
+  //     }
+  //   }
+  // }
 
-  @keyframes slide-in {
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
+  // @keyframes slide-in {
+  //   to {
+  //     transform: translateX(0);
+  //     opacity: 1;
+  //   }
+  // }
 
   // .button {
   //   position: relative;

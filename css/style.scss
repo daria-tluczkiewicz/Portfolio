@@ -16,7 +16,6 @@ h1 {
 
 h2 {
     font-size: 48px;
-    margin-bottom: 30px;
 }
 
 h1, h2{
@@ -44,13 +43,13 @@ ul {
 body {
     position: relative;
     overflow-x: hidden;
-    background-color: black;
+    background-color: $very-dark-gray;
     color: white;
     font-family: 'Geologica';
 }
 
 .max-readable {
-    max-width: 700px;
+    max-width: 600px;
 }
 
 .button {
@@ -58,7 +57,7 @@ body {
     border: none;
     border-radius: 6px;
     background-color: $nav-cv-color;
-    box-shadow: 0px 0px 10px 1px inset darken($nav-cv-color, 20%);
+    box-shadow: 0px 0px 10px 1px inset lighten($nav-cv-color, 20%);
     
     a {
         color: white;
@@ -92,7 +91,7 @@ body {
     }
 
     &:hover {
-        box-shadow: 0px 0px 10px 1px inset lighten($nav-cv-color, 20%);
+        box-shadow: 0px 0px 10px 1px inset darken($nav-cv-color, 20%);
     }
 }
 .button, button:hover, .button img {
@@ -118,7 +117,7 @@ section .container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1600px;
     width: 100%;
     gap: 24px;
 }
@@ -250,55 +249,207 @@ section.hero {
 }
 
 section.skills {
-    background-color: #212121;
 
     .skills-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        box-shadow: 0 0 10px inset white;
+        padding: 24px;
+        border-radius: 24px;
+        background-color: $dark-gray;
+
 
         .skill {
-            background-color: white;
-            padding: 10px 20px;
-            font-weight: bold;
-            color: #212121;
-            border-radius: 4px;
-        }
-    }
-}
-
-
-section.experience {
-    background-color: #323232;
-
-    .position {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-        width: 100%;
-
-        .position-header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            height: 112px;
+            width: 112px;
+            background-color: white;
+            box-shadow: 0 0 20px inset rgba(183, 182, 182, 0.405);
+            padding: 16px;
             font-weight: bold;
+            border-radius: 24px;
+            position: relative;
 
-            p {
-                font-weight: normal;
+            img {
+                max-width: 80%;
+            }
+
+            &::after {
+              position: absolute;
+              z-index: 20;
+              bottom: -32px;
+              left: 50%;
+              transform: translate(-50%, -8px);
+              text-align: center;
+              background-color: #f8f9fb;
+              color: black;
+              border-radius: 4px;
+              padding: 4px 8px;
+              visibility: hidden;
+              transition: $project-transition;
+              line-height: 18px;
+
+            }
+            
+            &:hover {
+
+                &::after {
+                    transform: translate(-50%, 0);
+                    visibility: visible;
+                    transition: $project-transition;
+                }
+            }
+            &.html {
+                &::after {
+                    content: 'HTML'
+                }
+
+                
+            }
+
+            &.css {
+                &::after {
+                    content: 'CSS'
+                }
+            }
+            
+            &.scss {
+                &::after {
+                    content: 'SCSS'
+                }
+            }
+
+            &.javascript {
+                &::after {
+                    content: 'JavaScript'
+                }
+            }
+            &.react {
+                &::after {
+                    content: 'React'
+                }
+            }
+            &.typescript {
+                &::after {
+                    content: 'TypeScript'
+                }
+            }
+            &.redux {
+                &::after {
+                    content: 'Redux Toolkit'
+                }
+            }
+            &.git {
+                &::after {
+                    content: 'Git'
+                }
+            }
+            &.vite {
+                &::after {
+                    content: 'Vite'
+                }
+            }
+            &.photoshop {
+                &::after {
+                    content: 'Photoshop'
+                }
+            }
+            &.wordpress {
+                &::after {
+                    content: 'Wordpress'
+                }
+            }
+            &.vite {
+                &::after {
+                    content: 'Vite'
+                }
+            }
+            &.components {
+                &::after {
+                    content: 'Web Components'
+                }
+            }
+            &.api {
+                &::after {
+                    content: 'Rest API'
+                }
             }
         }
     }
 }
 
 
+section.experience {
+    .container {
+        flex-direction: row;
+        gap: 48px;
+        padding: 96px;
+        width: 90vw;
+        max-width: 1600px;
+        border-radius: 25px;
+        background-color: #323232;
+        justify-content: space-between;
+        flex: 1 50%;
+
+        .experience-data {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .position {
+                background-color: $very-dark-gray;
+                box-shadow: 0 0 4px inset rgba(255, 255, 255, 0.389);
+                padding: 8px;
+                border-radius: 16px;
+                display: flex;
+                gap: 8px;
+                flex-direction: column;
+                width: 100%;
+                
+                & > div {
+                    box-shadow: 0 0 4px rgba(255, 255, 255, 0.119);
+                    background-color: $dark-gray;
+                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.108);
+                    padding: 18px;
+                }
+                
+        
+                .position-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-weight: bold;
+                    gap: 8px;
+
+                    p {
+                        color: $nav-cv-color
+                    }
+                }
+            }
+        }
+        .experience-image {
+            border-radius: 24px;
+            overflow: hidden;
+            margin: auto 0;
+
+            img {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    }
+
+}
+
+
 
 section.projects {
     background-color: $very-dark-gray;
-    
-    .container {
-        max-width: 1600px;
-    }
 
     .projects-container {
         display: flex;
@@ -337,6 +488,7 @@ section.projects {
          &:hover {
             flex: 3 400px;
             transition: $project-transition;
+            transition-delay: .05s;
 
             div { 
                 transition: $project-transition;
@@ -530,7 +682,8 @@ section.projects {
 }
 
 section.footer {
-    background-color: #212121;
+    border-radius: 24px 24px 0 0;
+    background-color: $dark-gray;
     
     .contact, .contact li {
         display: flex;
