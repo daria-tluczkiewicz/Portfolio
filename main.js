@@ -53,57 +53,56 @@ const skills = document.querySelector('.skills-container');
 // observer.observe(skills);
 
 
-const typingText = document.querySelector('.typing-text');
-let typingStep = 1
+// const typingText = document.querySelector('.typing-text');
+// let typingStep = 1
 
-function typingAnimation(text, delay) {
-    let letters = text.split('')
+// function typingAnimation(text, delay) {
+//     let letters = text.split('')
 
-    for (let i = 0; i <= letters.length; i++) {
-        setTimeout(()=>{
-            if(typingStep > 2) {
-                return
-            }
-            if (i === letters.length) {
-                reverseTypingAnimation(100)
-                return
-            }
-            let sentence = typingText.innerHTML.length === 0 ? letters[0] : `${typingText.innerHTML + letters[i]}`
-            sentence.concat(`${letters[i]}`)
-            typingText.innerHTML = sentence
-        }, delay * i)
-    }
-}
-
-
-
-function reverseTypingAnimation(delay) {
-
-    for (let i = 0; i <= 5; i++) {
-        setTimeout(()=>{
-            if(typingStep > 1) {
-                return
-            }
-            if (i === 5 && typingStep <= 2) {
-                typingAnimation(' a Frontend Developer', 80)
-                typingStep++
-                return
-            }
-            let sentence = `${typingText.innerHTML.slice(0,-1)}`
-            typingText.innerHTML = sentence
-        }, delay * i)
-    }
-}
+//     for (let i = 0; i <= letters.length; i++) {
+//         setTimeout(()=>{
+//             if(typingStep > 2) {
+//                 return
+//             }
+//             if (i === letters.length) {
+//                 reverseTypingAnimation(100)
+//                 return
+//             }
+//             let sentence = typingText.innerHTML.length === 0 ? letters[0] : `${typingText.innerHTML + letters[i]}`
+//             sentence.concat(`${letters[i]}`)
+//             typingText.innerHTML = sentence
+//         }, delay * i)
+//     }
+// }
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => {
-        typingAnimation(`Hello, I'm Daria`, 100)
-    }, 200)
-})
+// function reverseTypingAnimation(delay) {
 
-const scrollToTopButton = document.getElementById('scroll-top-button')
+//     for (let i = 0; i <= 5; i++) {
+//         setTimeout(()=>{
+//             if(typingStep > 1) {
+//                 return
+//             }
+//             if (i === 5 && typingStep <= 2) {
+//                 typingAnimation(' a Frontend Developer', 80)
+//                 typingStep++
+//                 return
+//             }
+//             let sentence = `${typingText.innerHTML.slice(0,-1)}`
+//             typingText.innerHTML = sentence
+//         }, delay * i)
+//     }
+// }
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     setTimeout(() => {
+//         typingAnimation(`Hello, I'm Daria`, 100)
+//     }, 200)
+// })
+
 window.addEventListener('scroll', handleScroll)
 
 function handleScroll() {
@@ -111,10 +110,8 @@ function handleScroll() {
     const threshold = 100;
     if (scrollY >+ threshold) {
       document.body.classList.add('scrolled');
-      scrollToTopButton.classList.add('show')
     } else {
       document.body.classList.remove('scrolled');
-      scrollToTopButton.classList.remove('show')
     }
   }
 
@@ -131,3 +128,18 @@ navItems.forEach((item, index) => item.addEventListener('mouseleave', function (
 
 
 
+const container = document.querySelector('#skillsContainer');
+		const wrap = document.querySelector('#movingContainer');
+		const moveHandler = (event) => {
+			const { x: x1, y: y1, width: w1, height: h1 } = container.getBoundingClientRect()
+			const { width: w2, height: h2 } = wrap.getBoundingClientRect()
+			const { clientX, clientY } = event;
+			const maxMoveX = w2 - w1;
+			const maxMoveY = h2 - h1;
+			const translateX = (clientX - x1) * maxMoveX / w1;
+			const translateY = (clientY - y1) * maxMoveY / h1;
+
+			wrap.style.transform = `translate(${-translateX}px, ${-translateY}px)`
+		}
+
+		container.addEventListener('mousemove', moveHandler);

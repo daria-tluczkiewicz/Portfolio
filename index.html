@@ -13,7 +13,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <a href='#' class="scroll-top-button" id="scroll-top-button"><img src="./img/arrow-up.png"></a>
+  <a href='#' class="scroll-top-button" id="scroll-top-button"><img src="./img/arrow-up.svg"></a>
     <div class="overlay"></div>
     <nav id="nav">
       <!-- <div class="name"><a href="#hero">Daria Tłuczkiewicz</a></div> -->
@@ -27,10 +27,10 @@
         <li class="nav-item contact" id="nav-contact"><a href="#contact">Contact</a></li>
         <li class="nav-item cv"><button class="button cv link"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
                 alt="CV"></a></button></li>
-              </ul>
-            </nav>
-            <section class="hero" id="hero">
-      <div class="container max-readable">
+      </ul>
+  </nav>
+  <section class="hero" id="hero">
+      <div class="container">
         
         <!-- <div class="scene-container">
           <div class="scene">
@@ -43,60 +43,74 @@
           </div>
         </div>   -->
         <div class="introduction">
-          <img class="section-image" src="img/code.png" alt="code" height='32px' width="auto">
           <h1> Hello, I'm Daria</h1>
-          <p class="about-me max-readable">I'm a frontend with expertise in creating responsive and interactive interfaces. 
+          <span class="about-me">I'm a frontend developer based in <b>Kielce, Poland</b> with expertise in creating responsive and interactive interfaces. 
             Proficient in HTML, CSS and JavaScript for crafting exceptional frontend experiences. Currently expanding my knowledge of React with Typescript and grasping Next JS.
-            </p>
+            </span>
           <button class="button about link"><a href="#skills" class="link">About me <img src="img/arrow-down.png" alt=""></a></button>
         </div>
       </div>
     </section>
     <section class="skills" id="skills">
       <div class="container">
-        <img class="section-image" src="img/stack.png" alt="stack" height='32px' width="auto">
-        <h2 class="scroll-animation">Skills</h2>
-        <ul class="skills-container">
-          <li class="skill html">
-            <img src="./img/html.svg">
-          </li>
-          <li class="skill css">
-            <img src="./img/css.svg">
-          </li>
-          <li class="skill scss">
-            <img src="./img/scss.svg">
-          </li>
-          <li class="skill javascript">
-            <img src="./img/javascript.svg">
-          </li>
-          <li class="skill react">
-            <img src="./img/react.svg">
-          </li>
-          <li class="skill typescript">
-            <img src="./img/typescript.svg">
-          </li>
-          <li class="skill redux">
-            <img src="./img/redux.svg">
-          </li>
-          <li class="skill git">
-            <img src="./img/git.svg">
-          </li>
-          <li class="skill vite">
-            <img src="./img/vite.svg">
-          </li>
-          <li class="skill wordpress">
-            <img src="./img/wordpress.svg">
-          </li>
-          <li class="skill photoshop">
-            <img src="./img/photoshop.svg">
-          </li>
-          <li class="skill components">
-            <img src="./img/components.svg">
-          </li>
-          <li class="skill api">
-            <img src="./img/api.svg">
-          </li>
-        </ul>
+        <div class="skills-description" >
+          <h2>Skills</h2>
+          <div class="frontend-skills">
+            <h3>Frontend</h3>
+            <span>I’m a competent frontend developer with a strong foundation in building responsive and interactive interfaces using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>. My expertise extends to building dynamic web applications using <b>React</b> and <b>Redux</b>, demonstrating my ability to work with advanced JavaScript libraries and frameworks. My knowledge of <b>a11y</b> rules and recommendations allows me to build accessible websites.</span>
+          </div>
+          <div class="other-skills">
+            <h3>Other</h3>
+            <span>Native Polish, Fluent English---build tools---git---figma---photoshop---, problem solving</span>           
+          </div>
+
+        </div>
+        <div class="skills-container" id="skillsContainer">
+          <ul class="moving-container" id="movingContainer">
+            <li class="skill html">
+              <img src="./img/html.svg">
+            </li>
+            <li class="skill css">
+              <img src="./img/css.svg">
+            </li>
+            <li class="skill scss">
+              <img src="./img/scss.svg">
+            </li>
+            <li class="skill javascript">
+              <img src="./img/javascript.svg">
+            </li>
+            <li class="skill react">
+              <img src="./img/react.svg">
+            </li>
+            <li class="skill typescript">
+              <img src="./img/typescript.svg">
+            </li>
+            <li class="skill redux">
+              <img src="./img/redux.svg">
+            </li>
+            <li class="skill git">
+              <img src="./img/git.svg">
+            </li>
+            <li class="skill vite">
+              <img src="./img/vite.svg">
+            </li>
+            <li class="skill wordpress">
+              <img src="./img/wordpress.svg">
+            </li>
+            <li class="skill photoshop">
+              <img src="./img/photoshop.svg">
+            </li>
+            <li class="skill figma">
+              <img src="./img/figma.svg">
+            </li>
+            <li class="skill components">
+              <img src="./img/components.svg">
+            </li>
+            <li class="skill api">
+              <img src="./img/api.svg">
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="experience" id="experience">
@@ -106,11 +120,10 @@
           <div class="position">
             <div class="position-header">
               <h3>Web Developer at Code Lovers</h3>
-              <p>January 2023 - December 2023</p>
+              <p>January 2022 - December 2023</p>
             </div>
             <div class="position-responsibilities">
-              <p class="max-readable">Expertly translated designs into code (HTML, CSS,
-                JavaScript, Wordpress), resolved interface issues across diverse projects, and executed seamless server migrations.</p>
+              <p>Expertly translated designs into code (HTML, CSS, JavaScript, Wordpress), resolved interface issues across diverse projects, and executed seamless server migrations.</p>
             </div>
           </div>
           <div class="position">
@@ -119,7 +132,7 @@
               <p>Since August 2021</p>
             </div>
             <div class="position-responsibilities">
-              <p class="max-readable">I've dedicated significant time to self-directed learning
+              <p>I've dedicated significant time to self-directed learning
                 and personal projects.</p>
             </div>
           </div>
@@ -131,7 +144,6 @@
     </section>
     <section class="projects" id="projects">
       <div class="container">
-        <img class="section-image" src="img/coffee.png" alt="coffee" height='32px' width="auto">
         <h2>Projects</h2>
         <div class="projects-container">
           <div class="project memo">
@@ -145,7 +157,7 @@
             <div class="project-body">
               <div class="project-image"></div>
               <div class="project-description">
-                <p class="max-readable">The Memo Game is a memory-enhancing application where players match pairs of cards to exercise cognitive skills. With colorful themes it offers a quick and engaging way to challenge and improve memory.</p>
+                <p>The Memo Game is a memory-enhancing application where players match pairs of cards to exercise cognitive skills. With colorful themes it offers a quick and engaging way to challenge and improve memory.</p>
                 <ul class="stack">
                   <li class="outline">SCSS</li>
                   <li class="outline">React</li>
@@ -166,7 +178,7 @@
             <div class="project-body">
               <div class="project-image"></div>
               <div class="project-description">
-                <p class="max-readable">React-based app crafted for effective vocabulary learning. Through a frequency list and card repetition system users can enhance their language skills seamlessly.</p>
+                <p>React-based app crafted for effective vocabulary learning. Through a frequency list and card repetition system users can enhance their language skills seamlessly.</p>
                 <ul class="stack">
                   <li class="outline">SCSS</li>
                   <li class="outline">React</li>
@@ -188,7 +200,7 @@
             <div class="project-body">
               <div class="project-image"></div>
               <div class="project-description">
-                <p class="max-readable">React-based app that offers a straightforward solution for calculating tips. Its clear interface and efficient features streamline the process, making tip calculations quick and hassle-free.</p>
+                <p>React-based app that offers a straightforward solution for calculating tips. Its clear interface and efficient features streamline the process, making tip calculations quick and hassle-free.</p>
                 <ul class="stack">
                   <li class="outline">SCSS</li>
                   <li class="outline">React</li>
