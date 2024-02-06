@@ -25,29 +25,27 @@
         <li class="nav-item experience" id="nav-experience"><a href="#experience">Experience</a></li>
         <li class="nav-item projects" id="nav-projects"><a href="#projects">Projects</a></li>
         <li class="nav-item contact" id="nav-contact"><a href="#contact">Contact</a></li>
-        <li class="nav-item cv"><button class="button cv link"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
+        <li class="nav-item cv"><button class="button cv link"><a href="files/CV Web Developer - Daria Tluczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
                 alt="CV"></a></button></li>
       </ul>
   </nav>
   <section class="hero" id="hero">
       <div class="container">
-        
-        <!-- <div class="scene-container">
-          <div class="scene">
-              <div class="floor"></div>
-              <div class="left"></div>
-              <div class="right"></div>
-              <div class="tablet"></div>
-              <div class="phone"></div>
-              <div class="circle-right"></div>
-          </div>
-        </div>   -->
         <div class="introduction">
-          <h1> Hello, I'm Daria</h1>
-          <span class="about-me">I'm a frontend developer based in <b>Kielce, Poland</b> with expertise in creating responsive and interactive interfaces. 
-            Proficient in HTML, CSS and JavaScript for crafting exceptional frontend experiences. Currently expanding my knowledge of React with Typescript and grasping Next JS.
-            </span>
-          <button class="button about link"><a href="#skills" class="link">About me <img src="img/arrow-down.png" alt=""></a></button>
+          <div class="availability">
+            <div class="dot"></div>
+            <span>Open for work opportunities</span>
+          </div>
+          <h1>Hello, I'm Daria Tłuczkiewicz</h1>
+          <h2>Frontend Developer</h2>
+          <span class="about-me">Eager to learn, focused on delivering pixel perfect websites individuality with <b>charming personality</b>. </span>
+          <span class="technologies">
+            <div>React</div>
+            <div>Typescript</div>
+          </span>
+          <button class="button cv link"><a href="files/CV Web Developer - Daria Tluczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
+                alt="CV"></a></button>
+          <!-- <button class="button about link"><a href="#skills" class="link">About me<img src="img/arrow-down.png" alt=""></a></button> -->
         </div>
       </div>
     </section>
@@ -61,7 +59,7 @@
           </div>
           <div class="other-skills">
             <h3>Other</h3>
-            <span>Native Polish, Fluent English---build tools---git---figma---photoshop---, problem solving</span>           
+            <span>As a front-end developer, I bring more than just coding skills to the table. Fluent in both Polish and English, effective communication is my forte. I excel in problem-solving, turning challenges into opportunities. Proficient in Git, I ensure smooth collaboration and code integrity. I streamline development workflows using build tools for efficiency. With design tools like Figma and Photoshop, I seamlessly integrate aesthetics into functionality, creating visually appealing web solutions. Detail-oriented and passionate about user experiences, I'm committed to delivering top-notch front-end solutions.</span>           
           </div>
 
         </div>
@@ -155,7 +153,9 @@
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image"></div>
+              </div>
               <div class="project-description">
                 <p>The Memo Game is a memory-enhancing application where players match pairs of cards to exercise cognitive skills. With colorful themes it offers a quick and engaging way to challenge and improve memory.</p>
                 <ul class="stack">
@@ -176,7 +176,9 @@
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image"></div>
+              </div>
               <div class="project-description">
                 <p>React-based app crafted for effective vocabulary learning. Through a frequency list and card repetition system users can enhance their language skills seamlessly.</p>
                 <ul class="stack">
@@ -198,7 +200,9 @@
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image"></div>
+              </div>
               <div class="project-description">
                 <p>React-based app that offers a straightforward solution for calculating tips. Its clear interface and efficient features streamline the process, making tip calculations quick and hassle-free.</p>
                 <ul class="stack">
@@ -209,16 +213,19 @@
               </div>
             </div>
           </div>
-          <div class="project code-lovers">
+          <div class="project code-lovers" id="codeLovers">
             <div class="project-header">
               <h3>Code Lovers</h3>
               <div class="links">
-                <a class="github"></a>
                 <a class="live-site" href="https://codelovers.pl" target="_blank"></a>
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image">
+                  <video id ="codeLoversVideo" src="./img/codelovers.mp4" poster="img/codelovers-poster.png" muted loop></video>
+                </div>
+              </div>
               <div class="project-description">
                 <ul class="stack">
                   <li class="outline">Wordpress</li>
@@ -227,7 +234,7 @@
               </div>
             </div>
           </div>
-          <div class="project dentamedic">
+          <div class="project dentamedic" id="dentamedic">
             <div class="project-header">
               <h3>DentaMedic</h3>
               <div class="links">
@@ -235,7 +242,11 @@
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image">
+                  <video id ="dentamedicVideo" src="./img/dentamedic.mp4" poster="img/dentamedic-poster.png" loop></video>
+                </div>             
+               </div>
               <div class="project-description">
                 <ul class="stack">
                   <li class="outline">Wordpress</li>
@@ -244,7 +255,7 @@
               </div>
             </div>
           </div>
-          <div class="project maxtor">
+          <div class="project maxtor" id="maxtor">
             <div class="project-header">
               <h3>Maxtor</h3>
               <div class="links">
@@ -252,7 +263,11 @@
               </div>
             </div>
             <div class="project-body">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <div class="image">
+                  <video id ="maxtorVideo" src="./img/maxtor.mp4" poster="img/maxtor-poster.png" muted loop></video>
+                </div>
+              </div>
               <div class="project-description">
                 <ul class="stack">
                   <li class="outline">Wordpress</li>
@@ -276,7 +291,7 @@
           <li><a href="https://github.com/ohdaridari" class="link" target="_blank"><img src="img/github.png"
                 alt="github">Github</a></li>
         </ul>
-        <button class="button cv"><a href="files/CV Web Developer - Daria Tłuczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
+        <button class="button cv"><a href="files/CV Web Developer - Daria Tluczkiewicz.pdf" class="link" download>Download CV <img src="img/download.png"
               alt="CV"></a></button>
       </div>
     </section>

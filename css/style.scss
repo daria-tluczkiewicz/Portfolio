@@ -11,7 +11,7 @@
 body {
     position: relative;
     overflow-x: hidden;
-    background-color: $very-dark-gray;
+    background-color: $very-dark-navy;
     color: white;
     font-family: 'Geologica';
 }
@@ -41,7 +41,7 @@ a, a:active, a:visited{
 }
 
 p, span, b {
-    font-size: 16px;
+    font-size: 18px;
     max-width: 600px;
     line-height: 24px;
     vertical-align: top;
@@ -62,12 +62,60 @@ section {
     padding: 5vw;
 }
 
+// .button {
+//     padding: 0;
+//     border: none;
+//     border-radius: 6px;
+//     background-color: $violet;
+//     box-shadow: 0px 0px 10px 1px inset lighten($violet, 20%);
+    
+//     a {
+//         color: white;
+//         font-size: 16px;
+//         font-weight: bold;
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+//         padding: 15px 25px;
+//     }
+
+//     img {
+//         height: 13px;
+//         width: auto;
+//     }
+
+//     &.cv img {
+//         height: 20px;
+//     }
+
+//     &.about {
+//         img {
+//             transition: 0.1s ease-out all;
+//         }
+        
+//         &:hover {
+//             img {
+//                 transform: translateX(10px);
+//             }
+//         }
+//     }
+
+//     &:hover {
+//         box-shadow: 0px 0px 10px 1px inset darken($violet, 20%);
+//     }
+
+//     &:hover, img {
+//         transition: 0.1s ease-out all;
+//     }
+// }
 .button {
     padding: 0;
     border: none;
     border-radius: 6px;
-    background-color: $nav-cv-color;
-    box-shadow: 0px 0px 10px 1px inset lighten($nav-cv-color, 20%);
+    background-color: transparent;
+    background: $dark-navy;
+    box-shadow:  7px 7px 7px darken($peach, 20%),
+             -7px -7px 7px lighten($violet, 10%);
     
     a {
         color: white;
@@ -101,11 +149,12 @@ section {
     }
 
     &:hover {
-        box-shadow: 0px 0px 10px 1px inset darken($nav-cv-color, 20%);
+        box-shadow: 0px 0px 10px 1px inset darken($violet, 20%);
     }
-}
-.button, button:hover, .button img {
-    transition: 0.1s ease-out all;
+
+    &:hover, img {
+        transition: 0.1s ease-out all;
+    }
 }
 
 section .container {
@@ -128,7 +177,7 @@ nav {
     width: fit-content;
     max-width: 95vw;
     border-radius: 10px;
-    background-color: $dark-gray;
+    background-color: $dark-navy;
     position: fixed;
     justify-content: space-between;
     align-items: center;
@@ -157,8 +206,8 @@ nav {
         transition: .3s;
     }
     &.cv {
-        box-shadow: 0px 0px 10px 1px inset $nav-cv-color;
-        background-color: darken($nav-cv-color, 60%);
+        box-shadow: 0px 0px 10px 1px inset $violet;
+        background-color: darken($violet, 60%);
         transition: .3s;
     }
 }
@@ -208,7 +257,7 @@ body.scrolled .scroll-top-button {
 
 
 body.scrolled nav {
-    background-color: rgb(70 66 66 / 20%);
+    background-color: rgba($dark-navy, 20%);
     backdrop-filter: blur(4px);
 }
 
@@ -223,30 +272,65 @@ section.hero {
     min-height: 70vh;
     max-height: 100vh;
     width: 100%;
-    color: white;
-    background-color: #3c3c3e;
+    color: #d4d6e8;
+    background-color: $dark-navy;
     position: relative;
-
-    .introduction {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-items: flex-start;
-    }
 
     .container {
         gap: 5vw;
         align-items: center;
+        justify-content: center;
     }
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        align-items: center;
+
+        .availability{
+            display: flex;
+            padding:  4px 12px;
+            gap: 12px;
+            align-items: center;
+            background: linear-gradient($very-dark-navy, $very-dark-navy) padding-box,
+              linear-gradient(163deg, rgba($peach, 30%) 30%, rgba($violet, 50%)) border-box;
+            border-radius: 24px;
+            border: 1px solid transparent;
+
+            .dot {
+                background-color: #78df41;
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+            }
+        }
+        h2 {
+            color: transparent;
+            background: linear-gradient(163deg, rgba($peach, 80%) 30%, $violet) text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-me {
+            font-size: 20px;
+            max-width: 100%;
+        }
+        .technologies {
+            display: flex;
+            gap: 8px;
+
+            div {
+                border: rgba($peach, 40%) 1px solid;
+                padding: 4px 12px;
+                border-radius: 24px;
+            }
+        }
+
+    }
+
 
     .button {
         margin-top: 30px;
     }
-
-    .typing-text {
-        display: contents;
-    }
-
     
 }
 
@@ -278,7 +362,7 @@ section.skills {
         padding: 8px;
         //TODO: add after pseudo element with shadow
         // box-shadow: 0 0 10px inset white;
-        background-color: $dark-gray;
+        background-color: $dark-navy;
         border-radius: 24px;
     }
     
@@ -480,7 +564,7 @@ section.experience {
         width: 90vw;
         max-width: 1600px;
         border-radius: 25px;
-        background-color: #323232;
+        background-color: $lighter-navy;
         justify-content: space-between;
         flex: 1 50%;
 
@@ -491,7 +575,7 @@ section.experience {
             gap: 24px;
 
             .position {
-                background-color: $very-dark-gray;
+                background-color: $very-dark-navy;
                 box-shadow: 0 0 4px inset rgba(255, 255, 255, 0.389);
                 padding: 8px;
                 border-radius: 16px;
@@ -502,7 +586,7 @@ section.experience {
                 
                 & > div {
                     box-shadow: 0 0 4px rgba(255, 255, 255, 0.119);
-                    background-color: $dark-gray;
+                    background-color: $dark-navy;
                     border-radius: 8px;
                     border: 1px solid rgba(255, 255, 255, 0.108);
                     padding: 18px;
@@ -517,7 +601,7 @@ section.experience {
                     gap: 4px;
 
                     p {
-                        color: $nav-cv-color
+                        color: $violet
                     }
                 }
             }
@@ -539,7 +623,7 @@ section.experience {
 
 
 section.projects {
-    background-color: $very-dark-gray;
+    background-color: $very-dark-navy;
 
     .container {
         flex-direction: column;
@@ -572,8 +656,21 @@ section.projects {
 
         &.memo {
 
-            .project-image{
+            .image{
                 background-image: url('../img/memo-game.png');
+            }
+        }
+        
+        &.langbe {
+            
+            .image{
+                background-image: url('../img/langbe-online.png');
+            }
+        }
+        &.tip-calculator {
+            
+            .image{
+                background-image: url('../img/tip-calculator.png');
             }
         }
        
@@ -637,6 +734,7 @@ section.projects {
             }
 
             .project-description {
+                background-image: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.777));
                 opacity: 1;
                 visibility: visible;
                 transition: $project-transition;
@@ -656,7 +754,7 @@ section.projects {
             justify-content: space-between;
             align-items: center;
             border: $project-border;
-            background-color: $very-dark-gray;
+            background-color: $very-dark-navy;
             padding: 30px;
             border-radius: 20px;
             display: flex;
@@ -693,7 +791,7 @@ section.projects {
         .project-body {
             border: $project-border;
             border-radius: 20px;
-            background-color: $very-dark-gray;
+            background-color: $very-dark-navy;
             padding: 30px;
             height: 100%;
             position: relative;
@@ -705,15 +803,25 @@ section.projects {
 
             .project-image {
                 width: 80%;
-                aspect-ratio: 3/5;
-                padding: 20px;
+                aspect-ratio: 1024 / 1366;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                background-repeat: no-repeat;
                 border: 10px solid #2c2c2c; 
                 border-radius: 20px;
                 position: relative;
-                background-size: cover;
-                background-position: 50%;
+
+                .image {
+                    background-size: cover;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    video {
+                        width: 100%;
+                    }
+                }
               }
               
               .project-image::before {
@@ -777,7 +885,7 @@ section.projects {
 
 section.footer {
     border-radius: 24px 24px 0 0;
-    background-color: $dark-gray;
+    background-color: $lighter-navy;
 
     .container {
         flex-direction: column;

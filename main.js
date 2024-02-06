@@ -142,4 +142,43 @@ const container = document.querySelector('#skillsContainer');
 			wrap.style.transform = `translate(${-translateX}px, ${-translateY}px)`
 		}
 
-		container.addEventListener('mousemove', moveHandler);
+container.addEventListener('mousemove', moveHandler);
+
+
+const codeLovers = document.querySelector('#codeLovers')
+const codeLoversVideo = document.querySelector('#codeLoversVideo')
+
+codeLovers.onmouseenter = (e) => {
+    console.log(e.target)
+    codeLoversVideo.play()
+}
+codeLovers.onmouseleave = (e) => {
+    console.log('leave')
+    codeLoversVideo.pause()
+}
+
+
+const dentamedic = document.querySelector('#dentamedic')
+const dentamedicVideo = document.querySelector('#dentamedicVideo')
+
+dentamedic.onmouseenter = (e) => {
+    console.log(e.target)
+    dentamedicVideo.play()
+}
+dentamedic.onmouseleave = (e) => {
+    console.log('leave')
+    dentamedicVideo.pause()
+}
+
+
+const maxtor = document.querySelector('#maxtor')
+const maxtorVideo = document.querySelector('#maxtorVideo')
+
+maxtor.onmouseenter = (e) => {
+    console.log(e.target)
+    maxtorVideo.play()
+}
+maxtor.onmouseleave = (e) => {
+    console.log('leave')
+    maxtorVideo.pause()
+}
