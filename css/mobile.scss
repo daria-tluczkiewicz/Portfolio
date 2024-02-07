@@ -156,3 +156,30 @@
         }
     }
 }
+
+@media (pointer: coarse) and (hover: none) {
+    section.skills .skills-container {
+        height: calc(45vw + 32px);
+        width: 90vw;
+        .moving-container {
+            width: 90vw;
+            height: 200%;
+            animation-name: scroll;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-timeline: view(100%);
+        }
+        .skill{
+            max-width: 22vw;
+        }
+    }
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}

@@ -34,31 +34,9 @@ $maxtor-color: #d3093c;
 
 $project-border: 1px solid rgba(255, 255, 255, 0.142);
 $project-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
-$memo-border-gradient-start: lighten($memo-color, 10%);
-$memo-border-gradient-end: darken($memo-color, 10%);
 $memo-background-color: rgba($memo-color, 0.7);
 
-$langbe-border-gradient-start: lighten($langbe-color, 10%);
-$langbe-border-gradient-end: darken($langbe-color, 10%);
 $langbe-background-color: rgba($langbe-color, 0.7);
-
-$tip-calculator-border-gradient-start: lighten($tip-calculator-color, 10%);
-$tip-calculator-border-gradient-end: darken($tip-calculator-color, 10%);
-$tip-calculator-background-color: rgba($tip-calculator-color, 0.7);
-
-$code-lovers-border-gradient-start: lighten($code-lovers-color, 10%);
-$code-lovers-border-gradient-end: darken($code-lovers-color, 10%);
-$code-lovers-background-color: rgba($code-lovers-color, 0.7);
-
-$dentamedic-border-gradient-start: lighten($dentamedic-color, 10%);
-$dentamedic-border-gradient-end: darken($dentamedic-color, 10%);
-$dentamedic-background-color: rgba($dentamedic-color, 0.7);
-
-$maxtor-border-gradient-start: lighten($maxtor-color, 10%);
-$maxtor-border-gradient-end: darken($maxtor-color, 10%);
-$maxtor-background-color: rgba($maxtor-color, 0.7);
-
 
 $nav-items: (
   skills: $nav-skills-color,
