@@ -19,11 +19,16 @@ $peach: #ed9b60;
 $violet:#8c72fb;
 
 //Projects
-$memo-color: #703047;
-$langbe-color: #e8713a;
-$tip-calculator-color: #c5e4e7;
-$code-lovers-color: #f0c8af;
-$dentamedic-color: #bbbdbe;
+// $memo-color: #703047;
+$memo-color: #d7195f;
+// $langbe-color: #e8713a;
+$langbe-color: #e59321;
+// $tip-calculator-color: #c5e4e7;
+$tip-calculator-color: #33b097;
+// $code-lovers-color: #f0c8af;
+$code-lovers-color: #939ff3;
+// $dentamedic-color: #bbbdbe;
+$dentamedic-color: #121318;
 $maxtor-color: #d3093c;
 
 
@@ -55,3 +60,19 @@ $maxtor-border-gradient-end: darken($maxtor-color, 10%);
 $maxtor-background-color: rgba($maxtor-color, 0.7);
 
 
+$nav-items: (
+  skills: $nav-skills-color,
+  projects: $nav-projects-color,
+  experience: $nav-experience-color,
+  contact: $peach,
+  cv: $violet
+);
+
+$projects: (
+  memo: #d7195f,
+  langbe: #e59321,
+  tip-calculator: #33b097,
+  code-lovers: #939ff3,
+  dentamedic: #121318,
+  maxtor: #d3093c
+);
