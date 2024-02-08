@@ -165,6 +165,7 @@ nav {
     border-radius: 50%;
     opacity: 0;
     transition: $project-transition;
+    transition-property: transform opacity;
     transform: translateY(-30px) rotate(90deg);
     visibility: hidden;
     background: no-repeat center/contain url('../img/arrow-up.svg')  ;
@@ -278,14 +279,12 @@ section.skills {
         overflow: hidden;
         width: 100%;
         aspect-ratio: 1 / 1;
-        padding: 8px;
-        //TODO: add after pseudo element with shadow
-        // box-shadow: 0 0 10px inset white;
         background-color: $dark-navy;
         border-radius: 24px;
     }
     
     .moving-container {
+        padding: 8px;
         width: 150%;
         height: 150%;
         display: grid;
@@ -609,11 +608,18 @@ section.projects {
 
             @each $project-name, $project-color in $projects {
 
-                &.#{$project-name} > div {
-                    background-image: linear-gradient($project-color, $project-color),
-                                    radial-gradient((circle at top left, lighten($project-color,10%), darken($project-color, 10%)));
-                    box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208), 0 0 10px $project-color;
-                }
+                &.#{$project-name} {
+                    & > div {
+                        background-image: linear-gradient($project-color, $project-color),
+                                        radial-gradient((circle at top left, lighten($project-color,10%), darken($project-color, 10%)));
+                        box-shadow: 0 0 20px inset rgba(255, 255, 255, 0.208), 0 0 10px $project-color;
+                    }
+
+                    .project-description {
+                        background-image: linear-gradient(transparent, rgba(darken($project-color, 40%), 70%));
+                    }
+                } 
+
             }
             
 
