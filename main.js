@@ -82,18 +82,42 @@ container.addEventListener('mousemove', moveHandler);
 // const observer = new IntersectionObserver(entries => {
 //     entries.forEach(entry => {
 //         entry.isIntersecting
-//         ? entry.target.style.transform = `translateY(-50%)`
-//         : entry.target.style.transform = `translateY(0)`
+//         ? entry.target.classList.add('scroll')
+//         : entry.target.classList.remove('scroll')
 
 //         console.log(entry.target)
-//     });
 // }, {
-//     threshold: 0.6,
+//     threshold: [0.9],
+//     })
 // });
-
+// console.log(window)
 // observer.observe(wrap);
 
 
+
+// Function to check if the element is in the viewport
+function isElementOverTheMiddle(el) {
+    const {top, height} = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return (
+      top >= 0 &&
+      top + height / 2 >= windowHeight / 2
+    );
+}
+
+window.addEventListener('scroll', handleSkillsScroll);
+
+function handleSkillsScroll() {
+    if (isElementOverTheMiddle(container)) {
+        wrap.classList.remove('scroll-down')
+        wrap.classList.add('scroll-up')
+        return
+    }
+    
+    wrap.classList.remove('scroll-up')
+    wrap.classList.add('scroll-down')
+    
+}
 
 
 
