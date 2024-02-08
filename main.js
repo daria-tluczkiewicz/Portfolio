@@ -120,11 +120,9 @@ function handleSkillsScroll() {
 }
 
 
-
 const projects = [codeLovers, dentamedic, maxtor]
 
 projects.forEach(project => {
-    console.log(project)
     const projectElement = document.querySelector(`#${project.id}`)
     const projectVideo = document.querySelector(`#${project.id}Video`)
 
@@ -135,44 +133,3 @@ projects.forEach(project => {
         projectVideo.pause()
     }
 })
-
-
-
-// const codeLovers = document.querySelector('#codeLovers')
-// const codeLoversVideo = document.querySelector('#codeLoversVideo')
-
-// codeLovers.onmouseenter = (e) => {
-//     console.log(e.target)
-//     codeLoversVideo.play()
-// }
-// codeLovers.onmouseleave = (e) => {
-//     console.log('leave')
-//     codeLoversVideo.pause()
-// }
-
-
-// const dentamedic = document.querySelector('#dentamedic')
-// const dentamedicVideo = document.querySelector('#dentamedicVideo')
-
-// dentamedic.onmouseenter = (e) => {
-//     console.log(e.target)
-//     dentamedicVideo.play()
-// }
-// dentamedic.onmouseleave = (e) => {
-//     console.log('leave')
-//     dentamedicVideo.pause()
-// }
-
-
-// const maxtor = document.querySelector('#maxtor')
-// const maxtorVideo = document.querySelector('#maxtorVideo')
-
-// maxtor.onmouseenter = (e) => {
-//     console.log(e.target)
-//     maxtorVideo.play()
-// }
-// maxtor.onmouseleave = (e) => {
-//     console.log('leave')
-//     maxtorVideo.pause()
-// }
-
