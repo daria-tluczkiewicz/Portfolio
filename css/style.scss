@@ -41,7 +41,7 @@ a, a:active, a:visited{
 
 p, span, b {
     font-size: 18px;
-    max-width: 600px;
+    max-width: 640px;
     line-height: 1.5;
     display: inline-block;
     vertical-align: top;
@@ -105,6 +105,7 @@ section .container {
     display: flex;
     align-items: flex-start;
     max-width: 1600px;
+    max-width: 95vw;
     width: 100%;
     gap: 24px;
 }
@@ -232,7 +233,6 @@ section.hero {
         }
         .about-me {
             font-size: 20px;
-            max-width: 100%;
         }
         .technologies {
             display: flex;
@@ -258,7 +258,7 @@ section.skills {
         flex: 1;
         align-items: center;
         justify-content: space-between;
-        padding: 48px;
+        padding: 48px 48px 0 48px;
     }
     
     .skills-description {
@@ -271,6 +271,10 @@ section.skills {
             flex-direction: column;
             gap: 8px;
         }
+    }
+    .skills-column{
+        width: 100%;
+        max-width: 640px;
     }
 
     .skills-container {
@@ -527,10 +531,11 @@ section.experience {
             overflow: hidden;
             margin: auto 0;
             min-width: 200px;
+            box-shadow: 0 0 16px rgba($violet, 70%);
 
             img {
                 width: 100%;
-                max-width: 500px;
+                max-width: 640px;
             }
         }
     }
@@ -622,6 +627,7 @@ section.projects {
             
 
             .project-image {
+                max-width: 720px;
                 transform: scale(1.1) translateY(55px);
             }
 
@@ -692,6 +698,7 @@ section.projects {
             background-color: $very-dark-navy;
             padding: 30px;
             height: 100%;
+            max-width: 900px;
             position: relative;
             overflow: hidden;
             visibility: visible;
@@ -701,24 +708,26 @@ section.projects {
 
             .project-image {
                 width: 80%;
-                aspect-ratio: 1024 / 1366;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                border: 10px solid $dark-navy; 
+                max-width: 620px;
+                aspect-ratio: 728 / 950;
+                // aspect-ratio: 720 / 1026;
+                box-shadow: 0 0 20px $very-dark-navy;
+                border: 10px solid $lighter-navy; 
                 border-radius: 20px;
                 position: relative;
                 overflow: hidden;
 
                 .image {
+                    width: 100%;
                     background-size: cover;
                     background-position: 50%;
                     background-repeat: no-repeat;
                     min-width: calc(100% + 1px);
-                    height: calc(100% + 1px);
+                    height: calc(100% + 5px);
                     transform: translate(-1px, -5px);
 
                     video {
                         width: 100%;
-                        min-width: 100%;
                         height: 100%;
                     }
                 }
@@ -733,7 +742,7 @@ section.projects {
                 transform: translateX(-50%);
                 width: 30%;
                 height: 10px;
-                background-color: $dark-navy;
+                background-color: $lighter-navy;
                 border-radius: 0 0 5px 5px;
               }
         }

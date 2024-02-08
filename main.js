@@ -113,10 +113,8 @@ function handleSkillsScroll() {
         wrap.classList.add('scroll-up')
         return
     }
-    
     wrap.classList.remove('scroll-up')
     wrap.classList.add('scroll-down')
-    
 }
 
 
