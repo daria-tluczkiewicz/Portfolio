@@ -44,7 +44,7 @@ p, span, b {
     font-size: 18px;
     max-width: 600px;
     line-height: 1.5;
-    vertical-align: middle !important;
+    vertical-align: top !important;
     display: inline-block;
 }
 
@@ -154,6 +154,7 @@ nav {
 }
 
 .scroll-top-button {
+    display: block;
     z-index: 10;
     position: fixed;
     bottom: 64px;
@@ -162,17 +163,13 @@ nav {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    
     opacity: 0;
-    transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
-    transform: translateY(-30px);
+    transition: $project-transition;
+    transform: translateY(-30px) rotate(90deg);
     visibility: hidden;
-
-    img {
-        aspect-ratio: 1 / 1;
-        width: 50px;
-    }
-    
+    background: no-repeat center/contain url('../img/arrow-up.svg')  ;
+    aspect-ratio: 1 / 1;
+    width: 50px;
    
     &:hover {
         transform: scale(1.1);
@@ -182,9 +179,9 @@ nav {
 
 body.scrolled .scroll-top-button {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(90deg);
     visibility: visible;
-    transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+    transition: $project-transition;
 }
 
 
@@ -310,7 +307,7 @@ section.skills {
             overflow: hidden;
 
             img {
-                max-height: 80%;
+                height: 70%;
                 max-width: 100px;
             }
 
