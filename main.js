@@ -78,24 +78,6 @@ const moveHandler = (event) => {
 
 container.addEventListener('mousemove', moveHandler);
 
-
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         entry.isIntersecting
-//         ? entry.target.classList.add('scroll')
-//         : entry.target.classList.remove('scroll')
-
-//         console.log(entry.target)
-// }, {
-//     threshold: [0.9],
-//     })
-// });
-// console.log(window)
-// observer.observe(wrap);
-
-
-
-// Function to check if the element is in the viewport
 function isElementOverTheMiddle(el) {
     const {top, height} = el.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
