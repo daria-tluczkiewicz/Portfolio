@@ -113,3 +113,33 @@ projects.forEach(project => {
         projectVideo.pause()
     }
 })
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry)=> {
+        const video = entry.target.querySelectorAll(' video')
+        
+        if (!entry.isIntersecting){
+            video.length != 0 ? video[0].pause() : null
+            entry.target.classList.remove('hover')
+            return
+        }
+        if (video.length === 0 ) {
+            entry.target.classList.add('hover')
+            return
+        }
+        if (entry.isIntersecting) {
+            video[0].play()
+            entry.target.classList.add('hover')
+            return
+        }
+    })
+}, {
+    threshold: 0.8
+})
+
+
+const projectBoxes = document.querySelectorAll('.project')
+
+projectBoxes.forEach((box) => {
+    observer.observe(box)
+})

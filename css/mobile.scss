@@ -26,6 +26,14 @@
   span, p, b, div, .about-me {
     font-size: 16px !important;
   }
+  section.projects .project {
+      transition-timing-function: linear !important;
+      
+      &:hover, .hover {
+        transition-timing-function: linear !important;
+          
+    }
+  }
 
   section.skills .container, section.experience .container {
     flex-direction: column;

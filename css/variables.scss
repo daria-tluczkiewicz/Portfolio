@@ -1,11 +1,3 @@
-//Navigation
-
-$nav-skills-color:#FF6F61;
-$nav-experience-color:#008080;
-$nav-projects-color:#4169E1;
-$nav-contact-color:#FF8243;
-
-
 
 
 //Background
@@ -39,11 +31,11 @@ $memo-background-color: rgba($memo-color, 0.7);
 $langbe-background-color: rgba($langbe-color, 0.7);
 
 $nav-items: (
-  skills: $nav-skills-color,
-  projects: $nav-projects-color,
-  experience: $nav-experience-color,
-  contact: $peach,
-  cv: $violet
+  skills: $peach,
+  projects: #8c58cb ,
+  experience: #c570ad ,
+  contact: $violet,
+  cv: $white
 );
 
 $projects: (

@@ -70,7 +70,7 @@ button {
     border-radius: 12px;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 0.2s;
-    box-shadow: -4px -2px 10px 0px rgba($white, 80%), 4px 2px 10px 0px rgb(95 157 231 / 48%);
+    box-shadow: -4px -2px 10px 0px rgba($white, 80%), 4px 2px 10px 0px lighten($lighter-navy, 30%);
 
     a {
         display: flex;
@@ -89,7 +89,7 @@ button {
    }
    
    button:hover {
-    box-shadow: -2px -1px 70px -9px $white, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+    box-shadow: -2px -1px 70px -9px $white, 2px 1px 8px 0px lighten($lighter-navy, 30%);
    }
    
    button:active {
@@ -141,6 +141,10 @@ nav {
         }
     }
 
+    button {
+        box-shadow: 0 0 8px rgba($white, 50%);
+    }
+
 }
 
 .navigation {
@@ -186,7 +190,7 @@ body.scrolled .scroll-top-button {
 
 
 body.scrolled nav {
-    background-color: rgba($dark-navy, 20%);
+    background-color: rgba($dark-navy, 60%);
     backdrop-filter: blur(4px);
 }
 
@@ -599,7 +603,7 @@ section.projects {
        
         
 
-         &:hover {
+         &:hover, &.hover {
             flex: 3 400px;
             transition: $project-transition;
             transition-delay: .05s;
