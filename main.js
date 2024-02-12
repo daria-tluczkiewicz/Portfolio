@@ -114,6 +114,9 @@ projects.forEach(project => {
     }
 })
 
+
+
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry)=> {
         const video = entry.target.querySelectorAll(' video')
@@ -134,12 +137,24 @@ const observer = new IntersectionObserver((entries) => {
         }
     })
 }, {
-    threshold: 0.8
+    threshold: 0.6
 })
 
 
 const projectBoxes = document.querySelectorAll('.project')
 
-projectBoxes.forEach((box) => {
-    observer.observe(box)
-})
+function toggleProjectsAnimation() {
+    if (projectBoxes[0].clientWidth < window.innerWidth * 0.9){
+        projectBoxes.forEach((box) => {
+            observer.unobserve(box)
+        })
+        return
+    }
+    projectBoxes.forEach((box) => {
+        observer.observe(box)
+        box.classList.remove('hover')
+    })
+}
+
+toggleProjectsAnimation()
+window.onresize = () => toggleProjectsAnimation()
