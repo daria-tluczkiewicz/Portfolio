@@ -147,6 +147,7 @@ function toggleProjectsAnimation() {
     if (projectBoxes[0].clientWidth < window.innerWidth * 0.9){
         projectBoxes.forEach((box) => {
             observer.unobserve(box)
+            box.classList.remove('hover')
         })
         return
     }
