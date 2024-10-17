@@ -122,7 +122,7 @@ const observer = new IntersectionObserver((entries) => {
         const video = entry.target.querySelectorAll(' video')
         
         if (!entry.isIntersecting){
-            video.length != 0 ? video[0].pause() : null
+            video.length !== 0 ? video[0].pause() : null
             entry.target.classList.remove('hover')
             return
         }
@@ -133,7 +133,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             video[0].play()
             entry.target.classList.add('hover')
-            return
         }
     })
 }, {
@@ -159,3 +158,29 @@ function toggleProjectsAnimation() {
 
 toggleProjectsAnimation()
 window.onresize = () => toggleProjectsAnimation()
+
+const boxes = document.querySelectorAll('.position')
+
+const handleScrollAnimation = (elements) => {
+    const viewportCenter = window.innerHeight/2
+
+    elements.forEach((element) => {
+        const offsetTop = Math.round(element.getBoundingClientRect().top)
+        let elementHeight = element.getBoundingClientRect().height + 48
+        console.log({offsetTop, elementHeight, viewportCenter, element})
+
+        if (offsetTop >= viewportCenter|| offsetTop + elementHeight <= viewportCenter){
+            element.classList.remove('isInView')
+        } else {
+            element.classList.add('isInView')
+        }
+    })
+}
+
+window.addEventListener('scroll', () => handleScrollAnimation(boxes))
+
+const updateElementsPosition = (elements) => {
+    elements.forEach((element) => {
+        element.style.top = element.offsetTop + 'px'
+    })
+}

@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica&family=Roboto:wght@400;700&display=swap');
 @import '/css/variables.scss';
 
-*, html {
-    scroll-behavior: smooth !important;
+* {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -123,7 +126,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
-    box-shadow: 0px 0px 7px 1px inset rgb(210 202 202 / 50%);
+    box-shadow: 0 0 7px 1px inset rgb(210 202 202 / 50%);
     transition: .5s .1s ease all;
 
     .nav-item {
@@ -132,7 +135,7 @@ nav {
 
     @each $item, $color in $nav-items {
         &.#{$item} {
-            box-shadow: 0px 0px 10px 1px inset $color;
+            box-shadow: 0 0 10px 1px inset $color;
             background-color: darken($color, 60%);
         }
     }
@@ -153,7 +156,6 @@ nav {
 }
 
 .scroll-top-button {
-    display: block;
     z-index: 10;
     position: fixed;
     bottom: 64px;
@@ -164,7 +166,7 @@ nav {
     border-radius: 50%;
     opacity: 0;
     transition: $project-transition;
-    transition-property: transform opacity;
+    transition-property: transform;
     transform: translateY(-30px) rotate(90deg);
     visibility: hidden;
     background: no-repeat center/contain url('../img/arrow-up.svg')  ;
@@ -271,22 +273,12 @@ section.hero {
                 }
             }
         }
+
         .about-me {
             font-size: 20px;
-        }
-        .technologies {
-            display: flex;
-            gap: 8px;
 
-            div {
-                border: rgba($peach, 40%) 1px solid;
-                padding: 4px 12px;
-                border-radius: 24px;
-            }
         }
-
     }
-    
 }
 
 section.skills {
@@ -531,56 +523,74 @@ section.experience {
         flex: 1 50%;
 
         .experience-data {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 24px;
 
+
+            .experience-section_content {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: space-between;
+            }
+
             .position {
+                height: 84.5px;
+                border: 1px solid grey;
+                transition: height 0.4s ease-in-out;
+                margin-bottom: 48px;
+                max-width: 800px;
                 background-color: $very-dark-navy;
                 box-shadow: 0 0 4px inset rgba(255, 255, 255, 0.389);
                 padding: 8px;
                 border-radius: 16px;
                 display: flex;
-                gap: 8px;
                 flex-direction: column;
-                width: 100%;
-                
-                & > div {
+
+                & > div:first-child {
                     box-shadow: 0 0 4px rgba(255, 255, 255, 0.119);
                     background-color: $dark-navy;
                     border-radius: 8px;
                     border: 1px solid rgba(255, 255, 255, 0.108);
                     padding: 18px;
                 }
-                
-        
+
                 .position-header {
                     display: flex;
-                    flex-direction: column;
                     justify-content: space-between;
                     font-weight: bold;
                     gap: 4px;
 
-                    p {
+                    span {
                         color: $peach;
+                    }
+                }
+
+                .position-responsibilities {
+                    padding: 18px;
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: height .4s ease-in-out .1s,opacity .3s ease-out .3s;
+                }
+
+                &.isInView {
+                    height: 360px;
+                    transition: height 0.4s ease-in-out;
+
+                    .position-responsibilities {
+                        margin-top: 8px;
+                        opacity: 100%;
+                        visibility: visible;
+                        height: 100%;
+                        transition: height .4s ease-in-out 0s,opacity .3s ease-out .3s;
                     }
                 }
             }
         }
-        .experience-image {
-            border-radius: 24px;
-            overflow: hidden;
-            margin: auto 0;
-            min-width: 200px;
-            box-shadow: 0 0 16px rgba($violet, 70%);
-
-            img {
-                width: 100%;
-                max-width: 640px;
-            }
-        }
     }
-
 }
 
 
@@ -696,7 +706,6 @@ section.projects {
             background-color: $very-dark-navy;
             padding: 30px;
             border-radius: 20px;
-            display: flex;
             gap: 10px;
 
             .links {
@@ -881,3 +890,44 @@ section.footer {
         }
     }
 }
+
+//.experience-data{
+//    width:100%;
+//}
+//.experience-section {
+//
+//    .experience-section_content {
+//        display: flex;
+//        flex-direction: column;
+//        align-items: stretch;
+//        justify-content: space-between;
+//    }
+//
+//    .position {
+//        width: 100%;
+//        height: 96px;
+//        border: 1px solid grey;
+//        transition: height 0.4s ease-in-out;
+//        margin-bottom: 48px;
+//        max-width: 800px;
+//
+//
+//        .position-responsibilities {
+//            height: 0;
+//            visibility: hidden;
+//            transition: inherit;
+//            padding: 0;
+//        }
+//
+//        &.isInView {
+//            height: 360px;
+//            transition: height 0.4s ease-in-out;
+//
+//            .position-responsibilities {
+//                visibility: visible;
+//                height: 100%;
+//                transition: inherit;
+//            }
+//        }
+//    }
+//}
