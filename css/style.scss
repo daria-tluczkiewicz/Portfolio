@@ -204,6 +204,10 @@ section.hero {
     position: relative;
     text-align: center;
 
+    b {
+        vertical-align: bottom;
+    }
+
     .container {
         gap: 5vw;
         align-items: center;
@@ -488,6 +492,23 @@ section.skills {
                 }
                 &::after {
                     content: 'Wordpress'
+                }
+            }
+            &.wix {
+                &::before {
+                    background-color: rgba(#202020, 0.7);
+                }
+                &::after {
+                    content: 'Wix'
+                }
+            }
+            &.shopify {
+                &::before {
+                    background-color: rgba(#95bf46, 0.7);
+                }
+                &::after {
+                    content: 'Shopify';
+                    color: black;
                 }
             }
             &.components {
